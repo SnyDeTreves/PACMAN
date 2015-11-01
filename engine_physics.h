@@ -1,23 +1,15 @@
-#ifndef ENGINE_PHYSICS_H
-#define ENGINE_PHYSICS_H
+#ifndef ENGINE_PHYSICS
+#define ENGINE_PHYSICS
+
+#include <cmath>
+#include "box.h"
+#include "entity.h"
 
 class Engine_physics
 {
-private:
-    class Box
-    {
-    private:
-        int width;
-        int height;
-    public:
-        Box(int width, int height);
-        int get_width();
-        int get_height();
-    };
-
 public:
     static Box create_box(int width, int height);
     static bool is_collision(Entity e1, Entity e2);
 };
 
-#endif // ENGINE_PHYSICS_H
+#endif // ENGINE_PHYSICS

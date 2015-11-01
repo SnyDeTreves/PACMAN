@@ -1,10 +1,19 @@
-#ifndef ENTITY_H
-#define ENTITY_H
+#ifndef ENTITY
+#define ENTITY
+
+#include "point.h"
+#include "box.h"
 
 class Entity
 {
+private:
+    Point position;
+    Box hitbox;
 public:
-    Entity();
+    Entity(int x, int y, int width, int weight);
+    Entity(Point pos, Box box);
+    Point get_pos();
+    Box get_box();
 };
 
-#endif // ENTITY_H
+#endif // ENTITY
