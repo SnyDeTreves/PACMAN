@@ -1,15 +1,16 @@
-#ifndef CORE_KERNEL_H
-#define CORE_KERNEL_H
+#ifndef CORE_KERNEL
+#define CORE_KERNEL
 
+#include <vector>
 #include "entity.h"
 
 class Core_kernel
 {
 private:
-    Entity *entities_list;
+    vector<Entity> entities_list;
 public:
-    Core_kernel(Entity *entities);
+    Core_kernel(vector<Entity> entities);
     void refresh_frame();
 };
 
-#endif // CORE_KERNEL_H
+#endif // CORE_KERNEL

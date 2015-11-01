@@ -15,7 +15,7 @@ public:
     int get_pos_y();
 };
 
-bool operator==(Point& lhs, Point& rhs)
+inline bool operator==(Point& lhs, Point& rhs)
 {
     return lhs.get_pos_x() == rhs.get_pos_x()
             && lhs.get_pos_y() == rhs.get_pos_y();
