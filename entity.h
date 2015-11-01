@@ -14,6 +14,7 @@ public:
     Entity(Point pos, Box box);
     Point get_pos();
     Box get_box();
+    void update_entity();
 };
 
 #endif // ENTITY

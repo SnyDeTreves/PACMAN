@@ -13,3 +13,6 @@ Box Entity::get_box()
 {
     return this->hitbox;
 }
+
+void Entity::update_entity()
+{}
