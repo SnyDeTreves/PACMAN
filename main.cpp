@@ -10,7 +10,7 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    /*Point a = Point(1, 2);
+    Point a = Point(1, 2);
     Point b = Point(1, 2);
     Point c = Point(1, 3);
     Point d = Point(5, 2);
@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     a.get_pos_x();
 
     bool ab = a == b;
-    cout << (a==b) << endl;*/
+    cout << (a==b) << endl;
 
     cout << "a" << endl;
 
@@ -28,5 +28,6 @@ int main(int argc, char *argv[])
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
     return app.exec();*/
+    return 0;
 }
 
