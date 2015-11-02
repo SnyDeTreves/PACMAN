@@ -1,5 +1,6 @@
 #include "entity.h"
 
+
 Entity::Entity(int x, int y, int width, int height) : position(Point(x, y)), hitbox(Box(width, height))
 {}
 Entity::Entity(Point pos, Box box) : position(pos), hitbox(box)
@@ -16,3 +17,4 @@ Box Entity::get_box()
 
 void Entity::update_entity()
 {}
+

@@ -25,9 +25,12 @@ int main(int argc, char *argv[])
     /*QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));*/
 
-    return app.exec();*/
+    //dans le kernel on va devoir écrire une classe, exemple Game, qui hérite de QApplication et implémente la fonction run, et c'est ça qu'on devra retourner  ici dans le main !
+    //ça va remplacer la classe Entity peut-être ? ou core-kernel?
+    //en gros ça va être le thread qui représente l'exécution de notre jeu on dirait
+    //return new QApplication().run();
     return 0;
 }
 

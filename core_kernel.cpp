@@ -1,5 +1,6 @@
 #include "core_kernel.h"
 
+
 Core_kernel::Core_kernel(vector<Entity> entities)
 {
     this->entities_list = entities;
