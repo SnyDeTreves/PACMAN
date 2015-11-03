@@ -1,15 +1,20 @@
 #include "core_kernel.h"
 
-
-Core_kernel::Core_kernel(vector<Entity> entities)
+namespace engine
 {
-    this->entities_list = entities;
-}
-
-void Core_kernel::refresh_frame()
-{
-    for(Entity entity:entities_list)
+    namespace kernel
     {
-        entity.update_entity();
+        Core_kernel::Core_kernel(vector<Entity> entities)
+        {
+            this->entities_list = entities;
+        }
+
+        void Core_kernel::refresh_frame()
+        {
+            for(Entity entity:entities_list)
+            {
+                entity.update_entity();
+            }
+        }
     }
 }

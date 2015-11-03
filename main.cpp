@@ -3,24 +3,20 @@
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
+#include "core_kernel.h"
+#include "engine_physics.h"
 #include "point.h"
-
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
-    Point a = Point(1, 2);
-    Point b = Point(1, 2);
-    Point c = Point(1, 3);
-    Point d = Point(5, 2);
-    Point e = a;
-    a.get_pos_x();
+    engine::physics::Point a = engine::physics::Point(1, 0);
+    engine::physics::Point b = engine::physics::Point(1, 2);
+    engine::physics::Point c = a + b;
 
-    bool ab = a == b;
-    cout << (a==b) << endl;
-
-    cout << "a" << endl;
+    cout << c.get_pos_x() << endl;
+    cout << c.get_pos_y() << endl;
 
     /*QGuiApplication app(argc, argv);
 

@@ -5,11 +5,20 @@
 #include "box.h"
 #include "entity.h"
 
-class Engine_physics
+using namespace engine::physics;
+using namespace engine::kernel;
+
+namespace engine
 {
-public:
-    static Box create_box(int width, int height);
-    static bool is_collision(Entity e1, Entity e2);
-};
+    namespace physics
+    {
+        class Engine_physics
+        {
+       public:
+            static Box create_box(int width, int height);
+            static bool is_collision(Entity e1, Entity e2);
+        };
+    }
+}
 
 #endif // ENGINE_PHYSICS

@@ -1,16 +1,22 @@
 #ifndef BOX
 #define BOX
 
-class Box
+namespace engine
 {
-private:
-    int width;
-    int height;
-public:
-    Box();
-    Box(int width, int height);
-    int get_width();
-    int get_height();
-};
+    namespace physics
+    {
+        class Box
+        {
+        private:
+            int width;
+            int height;
+        public:
+            Box();
+            Box(int width, int height);
+            int get_width();
+            int get_height();
+        };
+    }
+}
 
 #endif // BOX
