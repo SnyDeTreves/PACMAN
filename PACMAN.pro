@@ -8,7 +8,9 @@ SOURCES += main.cpp \
     engine_physics.cpp \
     entity.cpp \
     box.cpp \
-    point.cpp
+    point.cpp \
+    pacman.cpp \
+    mouvement.cpp
 
 RESOURCES += qml.qrc
 
@@ -23,5 +25,7 @@ HEADERS += \
     engine_physics.h \
     entity.h \
     box.h \
-    point.h
+    point.h \
+    pacman.h \
+    mouvement.h
 

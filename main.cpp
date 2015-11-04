@@ -6,12 +6,20 @@
 #include "core_kernel.h"
 #include "engine_physics.h"
 #include "point.h"
+#include "pacman.h"
+#include "mouvement.h"
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
-    engine::physics::Point a = engine::physics::Point(1, 0);
+    gameplay::Pacman pac = gameplay::Pacman(0, 0, 50, 50);
+    pac.set_heading(&gameplay::Mouvement::move_north);
+    pac.move();
+    pac.move();
+    pac.move();
+
+    /*engine::physics::Point a = engine::physics::Point(1, 0);
     engine::physics::Point b = engine::physics::Point(1, 0);
     engine::physics::Point c = engine::physics::Point(1, 2);
     engine::physics::Point d = engine::physics::Point(5, 0);
@@ -70,7 +78,7 @@ int main(int argc, char *argv[])
     cout << "a" << a << endl;
     cout << "b" << b << endl;
     cout << "c" << c << endl;
-    cout << endl;
+    cout << endl;*/
 
     /*QGuiApplication app(argc, argv);
 

@@ -15,6 +15,7 @@ namespace engine
         private:
             Point position;
             Box hitbox;
+            string path_skin;
         public:
             Entity(int x, int y, int width, int weight);
             Entity(Point pos, Box box);
