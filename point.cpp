@@ -25,5 +25,11 @@ namespace engine
             this->pos_y += rhs.pos_y;
             return *this;
         }
+        Point& Point::operator-=(const Point& rhs)
+        {
+            this->pos_x -= rhs.pos_x;
+            this->pos_y -= rhs.pos_y;
+            return *this;
+        }
     }
 }

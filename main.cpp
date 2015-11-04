@@ -12,11 +12,65 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     engine::physics::Point a = engine::physics::Point(1, 0);
-    engine::physics::Point b = engine::physics::Point(1, 2);
-    engine::physics::Point c = a + b;
+    engine::physics::Point b = engine::physics::Point(1, 0);
+    engine::physics::Point c = engine::physics::Point(1, 2);
+    engine::physics::Point d = engine::physics::Point(5, 0);
+    engine::physics::Point e = engine::physics::Point(5, 2);
+    engine::physics::Point f = a;
 
-    cout << c.get_pos_x() << endl;
-    cout << c.get_pos_y() << endl;
+    cout << "a==b : " << (a==b) << endl;
+    cout << "a==c : " << (a==c) << endl;
+    cout << "a==d : " << (a==d) << endl;
+    cout << "a==e : " << (a==e) << endl;
+    cout << "a==f : " << (a==f) << endl;
+    cout << endl;
+    cout << "a!=b : " << (a!=b) << endl;
+    cout << "a!=c : " << (a!=c) << endl;
+    cout << "a!=d : " << (a!=d) << endl;
+    cout << "a!=e : " << (a!=e) << endl;
+    cout << "a!=f : " << (a!=f) << endl;
+    cout << endl;
+
+    cout << "a" << a << endl;
+    cout << "b" << b << endl;
+    cout << "c" << c << endl;
+    cout << endl;
+
+    a += b;
+    cout << "a += b" << endl;
+    cout << endl;
+
+    cout << "a" << a << endl;
+    cout << "b" << b << endl;
+    cout << "c" << c << endl;
+    cout << endl;
+
+    c = a + b;
+    cout << "c = a + b" << endl;
+    cout << endl;
+
+    cout << "a" << a << endl;
+    cout << "b" << b << endl;
+    cout << "c" << c << endl;
+    cout << endl;
+
+    a -= b;
+    cout << "a -= b" << endl;
+    cout << endl;
+
+    cout << "a" << a << endl;
+    cout << "b" << b << endl;
+    cout << "c" << c << endl;
+    cout << endl;
+
+    c = a - b;
+    cout << "c = a - b" << endl;
+    cout << endl;
+
+    cout << "a" << a << endl;
+    cout << "b" << b << endl;
+    cout << "c" << c << endl;
+    cout << endl;
 
     /*QGuiApplication app(argc, argv);
 
