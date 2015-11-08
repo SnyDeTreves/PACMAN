@@ -2,6 +2,9 @@
 #define CORE_KERNEL
 
 #include <vector>
+#include <QApplication>
+#include <QPushButton>
+#include <QWidget>
 #include "entity.h"
 
 using namespace engine::kernel;
@@ -15,8 +18,10 @@ namespace engine
         private:
             vector<Entity> entities_list;
         public:
+            Core_kernel();
             Core_kernel(vector<Entity> entities);
             void refresh_frame();
+            int run(int argc, char* argv[]);
         };
     }
 }

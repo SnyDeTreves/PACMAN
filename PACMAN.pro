@@ -2,6 +2,7 @@ TEMPLATE = app
 
 QT += qml quick
 CONFIG += c++11
+QT+=widgets
 
 SOURCES += main.cpp \
     engines/box.cpp \
