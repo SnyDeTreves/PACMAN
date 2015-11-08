@@ -27,5 +27,6 @@ HEADERS += \
     engines/entity.h \
     engines/point.h \
     gameplay/mouvement.h \
-    gameplay/pacman.h
+    gameplay/pacman.h \
+    engines/engine_graphics.h
 
