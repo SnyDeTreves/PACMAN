@@ -13,15 +13,14 @@ namespace engine
 {
     namespace kernel
     {
-        class Core_kernel
+        class Core_kernel : public QApplication
         {
         private:
             vector<Entity> entities_list;
         public:
-            Core_kernel();
-            Core_kernel(vector<Entity> entities);
+            Core_kernel(int argc, char* argv[]);
+            Core_kernel(int argc, char* argv[], vector<Entity> entities);
             void refresh_frame();
-            int run(int argc, char* argv[]);
         };
     }
 }

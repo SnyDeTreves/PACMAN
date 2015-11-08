@@ -4,14 +4,15 @@ QT += qml quick
 CONFIG += c++11
 QT+=widgets
 
-SOURCES += main.cpp \
+SOURCES += \
     engines/box.cpp \
     engines/core_kernel.cpp \
     engines/engine_physics.cpp \
     engines/entity.cpp \
     engines/point.cpp \
     gameplay/mouvement.cpp \
-    gameplay/pacman.cpp
+    gameplay/pacman.cpp \
+    gameplay/main.cpp
 
 RESOURCES += qml.qrc
 
