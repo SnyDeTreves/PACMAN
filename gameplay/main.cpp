@@ -1,19 +1,19 @@
 
 #include "../engines/core_kernel.h"
+#include "../engines/engine_graphics.h"
 
-using namespace engine::kernel;
+using namespace engine;
 
 int main(int argc, char *argv[])
 {
 
-    Core_kernel *kernel = new Core_kernel(argc,argv);
+    kernel::Core_kernel *kernel = new kernel::Core_kernel(argc,argv);
+
+    graphics::Engine_graphics *graphics = new graphics::Engine_graphics();
+
+    graphics->display_background("test");
 
     return kernel->exec();
-
-    //dans le kernel on va devoir écrire une classe, exemple Game, qui hérite de QApplication et implémente la fonction run, et c'est ça qu'on devra retourner  ici dans le main !
-    //ça va remplacer la classe Entity peut-être ? ou core-kernel?
-    //en gros ça va être le thread qui représente l'exécution de notre jeu on dirait
-    //return new QApplication().run();
 }
 
 

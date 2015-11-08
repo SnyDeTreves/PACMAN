@@ -12,7 +12,8 @@ SOURCES += \
     engines/point.cpp \
     gameplay/mouvement.cpp \
     gameplay/pacman.cpp \
-    gameplay/main.cpp
+    gameplay/main.cpp \
+    engines/engine_graphics.cpp
 
 RESOURCES += qml.qrc
 
