@@ -7,9 +7,9 @@ using namespace engine;
 int main(int argc, char *argv[])
 {
 
-    kernel::Core_kernel *kernel = new kernel::Core_kernel(argc,argv);
+    Core_kernel *kernel = new Core_kernel(argc,argv);
 
-    graphics::Engine_graphics *graphics = new graphics::Engine_graphics();
+    Engine_graphics *graphics = new Engine_graphics();
 
     graphics->display_background("test");
 

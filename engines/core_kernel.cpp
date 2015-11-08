@@ -2,25 +2,23 @@
 
 namespace engine
 {
-    namespace kernel
+
+    Core_kernel::Core_kernel(int argc, char* argv[]) : QApplication(argc,argv)
     {
-        Core_kernel::Core_kernel(int argc, char* argv[]) : QApplication(argc,argv)
-        {
-            //QApplication(argc, argv);
-            this->entities_list = vector<Entity>();
-        }
+        //QApplication(argc, argv);
+        this->entities_list = vector<Entity>();
+    }
 
-        Core_kernel::Core_kernel(int argc, char* argv[], vector<Entity> entities) : QApplication(argc,argv)
-        {
-            this->entities_list = entities;
-        }
+    Core_kernel::Core_kernel(int argc, char* argv[], vector<Entity> entities) : QApplication(argc,argv)
+    {
+        this->entities_list = entities;
+    }
 
-        void Core_kernel::refresh_frame()
+    void Core_kernel::refresh_frame()
+    {
+        for(Entity entity:entities_list)
         {
-            for(Entity entity:entities_list)
-            {
-                entity.update_entity();
-            }
+            entity.update_entity();
         }
     }
 }

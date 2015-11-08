@@ -7,22 +7,19 @@
 #include <QWidget>
 #include "entity.h"
 
-using namespace engine::kernel;
+using namespace engine;
 
 namespace engine
 {
-    namespace kernel
+    class Core_kernel : public QApplication
     {
-        class Core_kernel : public QApplication
-        {
-        private:
-            vector<Entity> entities_list;
-        public:
-            Core_kernel(int argc, char* argv[]);
-            Core_kernel(int argc, char* argv[], vector<Entity> entities);
-            void refresh_frame();
-        };
-    }
+    private:
+        vector<Entity> entities_list;
+    public:
+        Core_kernel(int argc, char* argv[]);
+        Core_kernel(int argc, char* argv[], vector<Entity> entities);
+        void refresh_frame();
+    };
 }
 
 #endif // CORE_KERNEL
