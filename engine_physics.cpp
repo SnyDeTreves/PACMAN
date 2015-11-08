@@ -18,5 +18,10 @@ namespace engine
 
             return (dif_pos_w <= dif_box_w/2 && dif_pos_h <= dif_box_h/2);
         }
+
+        void Engine_physics::move_entity(Entity entity, Point to)
+        {
+            entity.set_pos(to);
+        }
     }
 }

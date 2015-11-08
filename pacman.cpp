@@ -18,6 +18,6 @@ namespace gameplay
 
     void Pacman::update_entity()
     {
-
+        move();
     }
 }

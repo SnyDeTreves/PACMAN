@@ -18,6 +18,11 @@ namespace engine
             return this->hitbox;
         }
 
+        void Entity::set_pos(Point to)
+        {
+            this->position = to;
+        }
+
         void Entity::update_entity()
         {}
     }

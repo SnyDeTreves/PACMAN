@@ -21,6 +21,7 @@ namespace engine
             Entity(Point pos, Box box);
             Point get_pos();
             Box get_box();
+            void set_pos(Point to);
             void update_entity();
         };
     }

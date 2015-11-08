@@ -17,6 +17,7 @@ namespace engine
        public:
             static Box create_box(int width, int height);
             static bool is_collision(Entity e1, Entity e2);
+            static void move_entity(Entity entity, Point to);
         };
     }
 }
