@@ -3,11 +3,11 @@
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
-#include "core_kernel.h"
-#include "engine_physics.h"
-#include "point.h"
-#include "pacman.h"
-#include "mouvement.h"
+#include "engines/core_kernel.h"
+#include "engines/engine_physics.h"
+#include "engines/point.h"
+#include "gameplay/pacman.h"
+#include "gameplay/mouvement.h"
 
 using namespace std;
 

@@ -4,13 +4,13 @@ QT += qml quick
 CONFIG += c++11
 
 SOURCES += main.cpp \
-    core_kernel.cpp \
-    engine_physics.cpp \
-    entity.cpp \
-    box.cpp \
-    point.cpp \
-    pacman.cpp \
-    mouvement.cpp
+    engines/box.cpp \
+    engines/core_kernel.cpp \
+    engines/engine_physics.cpp \
+    engines/entity.cpp \
+    engines/point.cpp \
+    gameplay/mouvement.cpp \
+    gameplay/pacman.cpp
 
 RESOURCES += qml.qrc
 
@@ -21,11 +21,11 @@ QML_IMPORT_PATH =
 include(deployment.pri)
 
 HEADERS += \
-    core_kernel.h \
-    engine_physics.h \
-    entity.h \
-    box.h \
-    point.h \
-    pacman.h \
-    mouvement.h
+    engines/box.h \
+    engines/core_kernel.h \
+    engines/engine_physics.h \
+    engines/entity.h \
+    engines/point.h \
+    gameplay/mouvement.h \
+    gameplay/pacman.h
 

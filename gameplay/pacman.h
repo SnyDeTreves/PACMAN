@@ -2,8 +2,8 @@
 #define PACMAN_H
 
 #include <string>
-#include "entity.h"
-#include "mouvement.h"
+#include "engines/entity.h"
+#include "gameplay/mouvement.h"
 
 namespace gameplay
 {

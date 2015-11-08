@@ -1,8 +1,8 @@
 #ifndef MOUVEMENT_H
 #define MOUVEMENT_H
 
-#include "engine_physics.h"
-#include "entity.h"
+#include "engines/engine_physics.h"
+#include "engines/entity.h"
 
 using namespace engine::physics;
 namespace gameplay
