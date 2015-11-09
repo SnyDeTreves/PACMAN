@@ -2,17 +2,22 @@
 #define MAIN_WINDOW_H
 
 #include <QMainWindow>
+#include <QWidget>
 #include <QString>
+#include <QVBoxLayout>
 #include <QLabel>
-#include <QImage>
+#include <QFrame>
 
 #define WIDTH 512
 #define HEIGHT 512
 
 namespace engine
 {
-    class Main_window : public QMainWindow
+    class Main_window : public QWidget
     {
+    private:
+        QLabel *life_bar;
+        QLabel *score_bar;
 
     public:
         Main_window();
