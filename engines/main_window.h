@@ -16,7 +16,9 @@ namespace engine
 
     public:
         Main_window();
-        void background_image(QString img_path);
+        void display_background(QString img_path);
+        void display_character(QString img_path);
+        void display_item(QString img_path);
     };
 }
 

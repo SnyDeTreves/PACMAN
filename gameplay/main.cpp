@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     Core_kernel kernel(argc,argv);
 
     Main_window w;
-    w.background_image("/home/laiaga/Documents/git/PACMAN/ressources/pacman_layout.JPG");
+    w.display_background("/home/laiaga/Documents/git/PACMAN/ressources/pacman_layout.JPG");
     w.show();
 
 
