@@ -5,25 +5,31 @@ using namespace engine;
 
 Main_window::Main_window() : QWidget()
 {
-    setFixedSize(WIDTH,HEIGHT);
+    //setFixedSize(WIDTH,HEIGHT);
 
-    QVBoxLayout *layout = new QVBoxLayout;
+    play_zone = new QFrame();
+    life_label = new QLabel("<font color=#ffffff>Lives left : </font>");
+    life_label->setAlignment(Qt::AlignTop);
+    score_label = new QLabel("<font color=#ffffff>Score : </font>");
+    score_label->setAlignment(Qt::AlignBottom);
+    life = new QLCDNumber(2);
+    life->setSegmentStyle(QLCDNumber::Filled);
+    life->display(3);
+    score = new QLCDNumber(7);
+    score->setSegmentStyle(QLCDNumber::Filled);
+    score->display(0);
 
-    life_bar = new QLabel();
-    life_bar->setText("<font color=#ffffff>Lifes left : </font>");
-    life_bar->setFixedHeight(25);
+    QGridLayout *layout = new QGridLayout();
+    layout->addWidget(life_label, 0, 0);
+    layout->addWidget(play_zone,1,0,8,1);
+    layout->addWidget(score_label, 10, 0);
+    layout->addWidget(life,0,1);
+    layout->addWidget(score,10,1);
 
-    QFrame *middle = new QFrame();
+    setLayout(layout);
 
-    score_bar = new QLabel();
-    score_bar->setText("<font color=#ffffff>Score : </font>");
-    score_bar->setFixedHeight(25);
-
-    layout->addWidget(life_bar);
-    layout->addWidget(middle);
-    layout->addWidget(score_bar);
-
-    this->setLayout(layout);
+    setWindowTitle("Pac-Man");
+    resize(512,512);
 }
 
 void Main_window::display_background(QString img_path)
