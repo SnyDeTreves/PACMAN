@@ -4,7 +4,7 @@
 #include "engines/engine_physics.h"
 #include "engines/entity.h"
 
-using namespace engine::physics;
+using namespace engine;
 namespace gameplay
 {
     class Mouvement

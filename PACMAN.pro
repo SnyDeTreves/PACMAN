@@ -13,7 +13,9 @@ SOURCES += \
     gameplay/mouvement.cpp \
     gameplay/pacman.cpp \
     gameplay/main.cpp \
-    engines/engine_graphics.cpp
+    engines/engine_graphics.cpp \
+    engines/main_window.cpp
+
 
 RESOURCES += qml.qrc
 
@@ -31,5 +33,6 @@ HEADERS += \
     engines/point.h \
     gameplay/mouvement.h \
     gameplay/pacman.h \
-    engines/engine_graphics.h
+    engines/engine_graphics.h \
+    engines/main_window.h
 

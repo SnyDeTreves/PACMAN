@@ -1,19 +1,21 @@
-
 #include "../engines/core_kernel.h"
 #include "../engines/engine_graphics.h"
+#include "../engines/main_window.h"
+
 
 using namespace engine;
 
 int main(int argc, char *argv[])
 {
 
-    Core_kernel *kernel = new Core_kernel(argc,argv);
+    Core_kernel kernel(argc,argv);
 
-    Engine_graphics *graphics = new Engine_graphics();
+    Main_window w;
+    w.background_image("/home/laiaga/Documents/git/PACMAN/ressources/pacman_layout.JPG");
+    w.show();
 
-    graphics->display_background("test");
 
-    return kernel->exec();
+    return kernel.exec();
 }
 
 

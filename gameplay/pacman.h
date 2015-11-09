@@ -7,7 +7,7 @@
 
 namespace gameplay
 {
-    class Pacman : public engine::kernel::Entity
+    class Pacman : public engine::Entity
     {
     private:
         string path_skin;
