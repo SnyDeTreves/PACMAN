@@ -2,13 +2,13 @@
 
 namespace gameplay
 {
-    Pacman::Pacman(int x, int y, int width=15, int height=15) : Entity(x, y, width, height)
+    Pacman::Pacman(int x, int y, int width, int height) : Entity(x, y, width, height)
     {
     }
 
-    Pacman::Pacman(int x, int y, QString img_path, int width=15, int height=15) : Entity(x, y, width, height)
+    Pacman::Pacman(int x, int y, QString img_path, int width, int height) : Entity(x, y, width, height)
     {
-
+        this->img_path = img_path;
     }
 
     void Pacman::set_heading(void (*head)(Entity))

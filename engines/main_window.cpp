@@ -5,14 +5,12 @@ using namespace engine;
 
 Main_window::Main_window() : QWidget()
 {
-    //setFixedSize(WIDTH,HEIGHT);
-
-    play_zone = new QFrame();
+    play_zone = new Frame();
     life_label = new QLabel("<font color=#ffffff>Lives left : </font>");
     life_label->setAlignment(Qt::AlignTop);
     score_label = new QLabel("<font color=#ffffff>Score : </font>");
     score_label->setAlignment(Qt::AlignBottom);
-    life = new QLCDNumber(2);
+    life = new QLCDNumber(7);
     life->setSegmentStyle(QLCDNumber::Filled);
     life->display(3);
     score = new QLCDNumber(7);
@@ -21,7 +19,7 @@ Main_window::Main_window() : QWidget()
 
     QGridLayout *layout = new QGridLayout();
     layout->addWidget(life_label, 0, 0);
-    layout->addWidget(play_zone,1,0,8,1);
+    layout->addWidget(play_zone,1,0,8,8);
     layout->addWidget(score_label, 10, 0);
     layout->addWidget(life,0,1);
     layout->addWidget(score,10,1);
@@ -29,7 +27,7 @@ Main_window::Main_window() : QWidget()
     setLayout(layout);
 
     setWindowTitle("Pac-Man");
-    resize(512,512);
+    resize(WIDTH,HEIGHT);
 }
 
 void Main_window::display_background(QString img_path)
@@ -41,12 +39,3 @@ void Main_window::display_background(QString img_path)
     this->setPalette(palette);
 }
 
-void Main_window::display_character(QString img_path)
-{
-
-}
-
-void Main_window::display_item(QString img_path)
-{
-
-}

@@ -11,14 +11,15 @@ namespace gameplay
     class Pacman : public engine::Entity
     {
     private:
-        string path_skin;
+        QString img_path;
         void (*head)(Entity);
     public:
-        Pacman(int x, int y, int width, int height);
-        Pacman(int x, int y, QString img_path, int width, int height);
+        Pacman(int x, int y, int width=15, int height=15);
+        Pacman(int x, int y, QString img_path, int width=15, int height=15);
         void set_heading(void (*head)(Entity));
         void move();
         void update_entity();
+        QString get_img_path(){return img_path;}
     };
 }
 

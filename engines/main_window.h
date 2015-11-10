@@ -5,8 +5,9 @@
 #include <QString>
 #include <QGridLayout>
 #include <QLabel>
-#include <QFrame>
 #include <QLCDNumber>
+#include "entity.h"
+#include "frame.h"
 
 #define WIDTH 512
 #define HEIGHT 512
@@ -20,13 +21,12 @@ namespace engine
         QLabel *score_label;
         QLCDNumber *life;
         QLCDNumber *score;
-        QFrame *play_zone;
+        engine::Frame *play_zone;
 
     public:
         Main_window();
         void display_background(QString img_path);
-        void display_character(QString img_path);
-        void display_item(QString img_path);
+        engine::Frame* get_play_zone(){return play_zone;};
     };
 }
 
