@@ -11,8 +11,8 @@ namespace gameplay
     {
     public:
         static void move_north(Entity entity);
-        static void move_east(Entity entity);
         static void move_south(Entity entity);
+        static void move_east(Entity entity);
         static void move_west(Entity entity);
     };
 }
