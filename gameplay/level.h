@@ -7,7 +7,7 @@
 class Level
 {
 private:
-    Pacman pacman;
+    Pacman *pacman;
     void on_key_up();
     void on_key_down();
     void on_key_left();

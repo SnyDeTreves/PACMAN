@@ -10,6 +10,7 @@
 #include <QGridLayout>
 #include "entity.h"
 #include "point.h"
+#include "../gameplay/pacman.h"
 
 using namespace gameplay;
 

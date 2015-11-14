@@ -1,36 +1,59 @@
-#include "main_window.h"
+#include "engine_graphics.h"
 
 using namespace engine;
 
 
-Main_window::Main_window() : QWidget()
+Engine_graphics::Engine_graphics() : QWidget()
 {
     play_zone = new Frame();
-    life_label = new QLabel("<font color=#ffffff>Lives left : </font>");
-    life_label->setAlignment(Qt::AlignTop);
-    score_label = new QLabel("<font color=#ffffff>Score : </font>");
-    score_label->setAlignment(Qt::AlignBottom);
-    life = new QLCDNumber(7);
-    life->setSegmentStyle(QLCDNumber::Filled);
-    life->display(3);
-    score = new QLCDNumber(7);
-    score->setSegmentStyle(QLCDNumber::Filled);
-    score->display(0);
-
-    QGridLayout *layout = new QGridLayout();
-    layout->addWidget(life_label, 0, 0);
-    layout->addWidget(play_zone,1,0,8,8);
-    layout->addWidget(score_label, 10, 0);
-    layout->addWidget(life,0,1);
-    layout->addWidget(score,10,1);
-
+    layout = new QGridLayout();
+    
+	layout->addWidget(play_zone,1,0,8,8);
+    
+    labels = new vector<QLabel*>();
+    numbers = new vector<QLCDNumber*>();
+    
     setLayout(layout);
-
     setWindowTitle("Pac-Man");
+
     resize(WIDTH,HEIGHT);
 }
 
-void Main_window::display_background(QString img_path)
+Engine_graphics::Engine_graphics(int width, int height) : QWidget()
+{
+	play_zone = new Frame();
+    layout = new QGridLayout();
+    
+    layout->addWidget(play_zone,1,0,8,8);
+    
+    labels = new vector<QLabel*>();
+    numbers = new vector<QLCDNumber*>();
+    
+    setLayout(layout);
+    setWindowTitle("Pac-Man");
+    
+    resize(width,height);
+}
+
+void Engine_graphics::create_label(QString text, int row, int col, int width, int height, Qt::Alignment alignment)
+{
+    QLabel *l = new QLabel(text);
+    if(alignment) l->setAlignment(alignment);
+    layout->addWidget(l,row,col,width,height);
+    labels->push_back(l);
+}
+
+void Engine_graphics::create_number(int initial_value, int nb_digit, int col, int row, int width, int height)
+{
+    QLCDNumber *n = new QLCDNumber(nb_digit);
+	n->setSegmentStyle(QLCDNumber::Filled);
+	n->display(initial_value);
+    //if(alignment) n->setAlignment(alignment);
+	layout->addWidget(n,row,col,width,height);
+    numbers->push_back(n);
+}
+
+void Engine_graphics::set_background(QString img_path)
 {
     QPixmap bkgnd(img_path);
     bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);

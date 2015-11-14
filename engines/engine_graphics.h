@@ -6,7 +6,7 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <QLCDNumber>
-#include "entity.h"
+#include <vector>
 #include "frame.h"
 
 #define WIDTH 512
@@ -14,21 +14,22 @@
 
 namespace engine
 {
-    class Main_window : public QWidget
+    class Engine_graphics : public QWidget
     {
     private:
-        QLabel *life_label;
-        QLabel *score_label;
-        QLCDNumber *life;
-        QLCDNumber *score;
+		QGridLayout *layout;
         engine::Frame *play_zone;
+        vector<QLabel*> *labels;
+        vector<QLCDNumber*> *numbers;
 
     public:
-        Main_window();
-        void display_background(QString img_path);
+        Engine_graphics();
+        Engine_graphics(int width, int height);
+        void create_label(QString text, int row, int col, int width=1, int height=1, Qt::Alignment alignment=0);
+        void create_number(int initial_value, int nb_digit, int row, int col, int width=1, int height=1);
+        void set_background(QString img_path);
         engine::Frame* get_play_zone(){return play_zone;};
     };
 }
 
 #endif // ENGINE_GRAPHICS
-
