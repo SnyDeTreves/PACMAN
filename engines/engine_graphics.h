@@ -1,25 +1,32 @@
 #ifndef ENGINE_GRAPHICS
 #define ENGINE_GRAPHICS
 
-#include<string>
 #include <QWidget>
-#include <QPushButton>
+#include <QString>
+#include <QGridLayout>
+#include <QLabel>
+#include <QLCDNumber>
 #include "entity.h"
+#include "frame.h"
 
-using std::string;
+#define WIDTH 512
+#define HEIGHT 512
 
 namespace engine
 {
-    class Engine_graphics
+    class Main_window : public QWidget
     {
     private:
-        QWidget main_window;
-    public:
-        Engine_graphics();
+        QLabel *life_label;
+        QLabel *score_label;
+        QLCDNumber *life;
+        QLCDNumber *score;
+        engine::Frame *play_zone;
 
-        void display_background(string img_path);
-        void display_character(string img_path, Entity character);
-        void display_item(string img_path, int x, int y);
+    public:
+        Main_window();
+        void display_background(QString img_path);
+        engine::Frame* get_play_zone(){return play_zone;};
     };
 }
 
