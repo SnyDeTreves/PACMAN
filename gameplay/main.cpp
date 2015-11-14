@@ -1,6 +1,5 @@
 #include "../engines/core_kernel.h"
 #include "../engines/engine_graphics.h"
-#include "../engines/main_window.h"
 #include "pacman.h"
 
 using namespace engine;
@@ -14,15 +13,15 @@ int main(int argc, char *argv[])
 
    // std::cout << "deux" << std::endl;
 
-    Main_window w;
+    Engine_graphics e;
 
    // std::cout << "trois" << std::endl;
 
-    w.display_background("ressources/pacman_layout.JPG");
+    e.set_background("ressources/pacman_layout.JPG");
 
    // std::cout << "quatre" << std::endl;
 
-    w.show();
+    e.show();
 
    // std::cout << "cinq" << std::endl;
 
@@ -30,9 +29,9 @@ int main(int argc, char *argv[])
 
    // std::cout << "six" << std::endl;
 
-    w.get_play_zone()->display_character(pacman);
+    e.get_play_zone()->display_character(pacman);
 
-   // std::cout << "sept" << std::endl;
+    std::cout << "sept" << std::endl;
 
     return kernel.exec();
 }
