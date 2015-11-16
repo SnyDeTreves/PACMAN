@@ -4,17 +4,20 @@ QT += qml quick
 CONFIG += c++11
 QT+=widgets
 
+QMAKE_CXXFLAGS += -g -O0
+
 SOURCES += \
     engines/box.cpp \
     engines/core_kernel.cpp \
     engines/engine_physics.cpp \
     engines/entity.cpp \
     engines/point.cpp \
+    engines/engine_graphics.cpp \
+    engines/frame.cpp \
     gameplay/mouvement.cpp \
     gameplay/pacman.cpp \
     gameplay/main.cpp \
-    engines/engine_graphics.cpp \
-    engines/frame.cpp \
+    gameplay/window.cpp \
     gameplay/level.cpp
 
 
@@ -32,9 +35,10 @@ HEADERS += \
     engines/engine_physics.h \
     engines/entity.h \
     engines/point.h \
-    gameplay/mouvement.h \
-    gameplay/pacman.h \
     engines/engine_graphics.h \
     engines/frame.h \
-    gameplay/level.h
+    gameplay/window.h \
+    gameplay/level.h \
+    gameplay/mouvement.h \
+    gameplay/pacman.h
 

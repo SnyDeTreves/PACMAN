@@ -1,5 +1,5 @@
 #include "../engines/core_kernel.h"
-#include "../engines/engine_graphics.h"
+#include "window.h"
 #include "pacman.h"
 
 using namespace engine;
@@ -7,31 +7,26 @@ using namespace gameplay;
 
 int main(int argc, char *argv[])
 {
-   // std::cout << "un" << std::endl;
+    std::cout << "un"<< std::endl;
 
     Core_kernel kernel(argc,argv);
 
-   // std::cout << "deux" << std::endl;
+    std::cout << "test"<< std::endl;
 
-    Engine_graphics e;
+    Window w("ressources/pacman_layout.JPG");
 
-   // std::cout << "trois" << std::endl;
 
-    e.set_background("ressources/pacman_layout.JPG");
+    std::cout << "deux"<< std::endl;
 
-   // std::cout << "quatre" << std::endl;
+    //Pacman pacman(0,0,"ressources/pacman.png");
 
-    e.show();
+    std::cout << "trois"<< std::endl;
 
-   // std::cout << "cinq" << std::endl;
+    w.create_life_display();
 
-    Pacman pacman(0,0,"ressources/pacman.png");
+    w.create_score_display();
 
-   // std::cout << "six" << std::endl;
-
-    e.get_play_zone()->display_character(pacman);
-
-    std::cout << "sept" << std::endl;
+    std::cout << "quatre"<< std::endl;
 
     return kernel.exec();
 }
