@@ -35,6 +35,13 @@ void Window::create_score_display()
     graph->create_label("<font color=#ffffff>Score : </font>",row,col,width,height,Qt::AlignBottom);
     graph->create_number(initial_score,nb_digits,row,col+1,width,height);
 }
+
+void Window::display_pacman(Pacman p)
+{
+    QString img_path = p.get_img_path();
+    graph->get_play_zone()->display_character(img_path,50,50);
+}
+
 void Window::create_window()
 {
 }

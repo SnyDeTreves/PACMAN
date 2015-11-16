@@ -17,19 +17,18 @@ void Frame::set_handler_arrows(void (*on_key_up)(), void (*on_key_down)(), void 
     this->on_key_right = on_key_right;
 }
 
-void Frame::display_character(Pacman p)
+void Frame::display_character(QString img_path, int x, int y)
 {
     character = new QLabel();
-    QPixmap pixmap(p.get_img_path());
-//    std::cout << p->get_img_path() << endl;
+    QPixmap pixmap(img_path);
 
     character->setPixmap(pixmap);
 
     QGridLayout *layout = new QGridLayout();
-    layout->addWidget(character,0, 0);
+    layout->addWidget(character,1,10);
 
-    QWidget *corner = new QWidget();
-    layout->addWidget(corner,100,100);
+    //QWidget *corner = new QWidget();
+    //layout->addWidget(corner,100,100);
 
     setLayout(layout);
 

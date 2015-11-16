@@ -4,6 +4,7 @@
 #include "../engines/engine_graphics.h"
 #include <QString>
 #include <QPointer>
+#include <string>
 
 namespace gameplay
 {
@@ -16,6 +17,7 @@ namespace gameplay
 		void create_life_display();
 		void create_score_display();
 		void create_window();
+        void display_pacman(Pacman p);
     };
 }
 

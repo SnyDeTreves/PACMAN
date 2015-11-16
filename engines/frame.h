@@ -21,7 +21,7 @@ namespace engine
     public:
         Frame();
         void set_handler_arrows(void (*on_key_left)(), void (*on_key_right)(), void (*on_key_up)(), void (*on_key_down)());
-        void display_character(Pacman p);
+        void display_character(QString img_path, int x, int y);
         void display_item(Entity e);
     private:
         enum { BoardWidth = 19, BoardHeight = 22 };

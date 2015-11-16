@@ -43,13 +43,13 @@ void Engine_graphics::create_label(QString text, int row, int col, int width, in
     labels->push_back(l);
 }
 
-void Engine_graphics::create_number(int initial_value, int nb_digit, int col, int row, int width, int height)
+void Engine_graphics::create_number(int initial_value, int nb_digit, int row, int col, int width, int height)
 {
     QLCDNumber *n = new QLCDNumber(nb_digit);
 	n->setSegmentStyle(QLCDNumber::Filled);
 	n->display(initial_value);
     //if(alignment) n->setAlignment(alignment);
-	layout->addWidget(n,row,col,width,height);
+    layout->addWidget(n,row,col,width,height);
     numbers->push_back(n);
 }
 

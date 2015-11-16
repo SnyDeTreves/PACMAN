@@ -7,6 +7,7 @@
 #include <QLabel>
 #include <QLCDNumber>
 #include <vector>
+#include <string>
 #include "frame.h"
 
 #define WIDTH 512
