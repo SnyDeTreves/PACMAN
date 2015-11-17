@@ -18,7 +18,8 @@ SOURCES += \
     gameplay/pacman.cpp \
     gameplay/main.cpp \
     gameplay/window.cpp \
-    gameplay/level.cpp
+    gameplay/level.cpp \
+    gameplay/labyrinth.cpp
 
 
 RESOURCES += qml.qrc
@@ -40,5 +41,6 @@ HEADERS += \
     gameplay/window.h \
     gameplay/level.h \
     gameplay/mouvement.h \
-    gameplay/pacman.h
+    gameplay/pacman.h \
+    gameplay/labyrinth.h
 
