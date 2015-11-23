@@ -2,12 +2,18 @@
 
 namespace engine
 {
-    Box Engine_physics::create_box(int width, int  height)
-    {
-        return Box(width, height);
-    }
+Box Engine_physics::create_box(int width, int  height)
+{
+    return Box(width, height);
+}
 
-    bool Engine_physics::is_collision(Entity e1, Entity e2)
+bool Engine_physics::is_collision(Entity e1, Entity e2)
+{
+    if(e1.is_null() || e2.is_null())
+    {
+        return false;
+    }
+    else
     {
         int dif_pos_w = abs(e1.get_pos().get_pos_x() - e2.get_pos().get_pos_x());
         int dif_pos_h = abs(e1.get_pos().get_pos_y() - e2.get_pos().get_pos_y());
@@ -16,9 +22,10 @@ namespace engine
 
         return (dif_pos_w <= dif_box_w/2 && dif_pos_h <= dif_box_h/2);
     }
+}
 
-    void Engine_physics::move_entity(Entity entity, Point to)
-    {
-        entity.set_pos(to);
-    }
+void Engine_physics::move_entity(Entity entity, Point to)
+{
+    entity.set_pos(to);
+}
 }
