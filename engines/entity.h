@@ -20,6 +20,7 @@ namespace engine
         Entity(Point pos, Box box, Core_kernel ker);
         Point get_pos();
         Box get_box();
+        bool is_null();
         void set_pos(Point to);
         void update_entity();
     };

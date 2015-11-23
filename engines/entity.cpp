@@ -21,6 +21,11 @@ namespace engine
         return this->hitbox;
     }
 
+    bool Entity::is_null()
+    {
+        return (this->get_box().get_width() == 0 && this->get_box().get_height() == 0);
+    }
+
     void Entity::set_pos(Point to)
     {
         this->position = to;
