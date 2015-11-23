@@ -16,8 +16,8 @@ namespace engine
     private:
         vector<Entity> entities_list;
     public:
-        Core_kernel(int argc, char* argv[]);
-        Core_kernel(int argc, char* argv[], vector<Entity> entities);
+        Core_kernel(int &argc, char* argv[]);
+        Core_kernel(int &argc, char* argv[], vector<Entity> entities);
         void add_entity(Entity e);
         void main_loop();
     };

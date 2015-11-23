@@ -2,6 +2,7 @@
 #define LEVEL_H
 
 #include "engines/frame.h"
+#include "engines/core_kernel.h"
 #include "pacman.h"
 
 class Level
@@ -13,7 +14,7 @@ private:
     void on_key_left();
     void on_key_right();
 public:
-    Level();
+    Level(Core_kernel *ker);
 };
 
 #endif // LEVEL_H

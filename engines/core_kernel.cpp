@@ -3,12 +3,12 @@
 namespace engine
 {
 
-    Core_kernel::Core_kernel(int argc, char* argv[]) : QApplication(argc,argv)
+    Core_kernel::Core_kernel(int &argc, char* argv[]) : QApplication(argc,argv)
     {
         this->entities_list = vector<Entity>();       
     }
 
-    Core_kernel::Core_kernel(int argc, char* argv[], vector<Entity> entities) : QApplication(argc,argv)
+    Core_kernel::Core_kernel(int &argc, char* argv[], vector<Entity> entities) : QApplication(argc,argv)
     {
         this->entities_list = entities;
     }

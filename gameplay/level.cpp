@@ -2,9 +2,9 @@
 
 using namespace engine;
 
-Level::Level()
+Level::Level(Core_kernel *ker)
 {
-    this->pacman = new Pacman(0,0);
+    this->pacman = new Pacman(0,0,ker);
 }
 
 void Level::on_key_up()

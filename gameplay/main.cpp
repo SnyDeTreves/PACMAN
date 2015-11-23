@@ -9,14 +9,16 @@ int main(int argc, char *argv[])
 {
     //std::cout << "un"<< std::endl;
 
-    Core_kernel kernel(argc,argv);
+    int &tmp = argc;
+    Core_kernel kernel(tmp,argv);
+
 
     Window w("ressources/pacman_layout.JPG");
 
 
     //std::cout << "deux"<< std::endl;
 
-    Pacman pacman(0,0,"ressources/pacman.png");
+    Pacman pacman(0,0,"ressources/pacman.png",&kernel);
 
     //std::cout << "trois"<< std::endl;
 
