@@ -18,7 +18,8 @@ namespace engine
     public:
         Core_kernel(int argc, char* argv[]);
         Core_kernel(int argc, char* argv[], vector<Entity> entities);
-        void refresh_frame();
+        void add_entity(Entity e);
+        void main_loop();
     };
 }
 

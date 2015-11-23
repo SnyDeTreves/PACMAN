@@ -6,7 +6,7 @@ Window::Window(QString bg_img_path)
 {
     graph = new Engine_graphics();
     graph->set_background(bg_img_path);
-    std::cout << bg_img_path.toStdString() << std::endl;
+  //  std::cout << bg_img_path.toStdString() << std::endl;
     graph->show();
 }
 

@@ -13,7 +13,12 @@ namespace engine
         this->entities_list = entities;
     }
 
-    void Core_kernel::refresh_frame()
+    void Core_kernel::add_entity(Entity e)
+    {
+        this->entities_list.push_back(e);
+    }
+
+    void Core_kernel::main_loop()
     {
         for(Entity entity:entities_list)
         {
