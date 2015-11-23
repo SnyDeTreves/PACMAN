@@ -5,9 +5,10 @@
 #include "engines/entity.h"
 
 using namespace engine;
+
 namespace gameplay
 {
-    class Mouvement
+    class Movment
     {
     public:
         static void move_north(Entity entity);

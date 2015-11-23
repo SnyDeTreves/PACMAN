@@ -13,16 +13,17 @@ SOURCES += \
     engines/entity.cpp \
     engines/point.cpp \
     engines/engine_graphics.cpp \
-    engines/frame.cpp \
-    gameplay/mouvement.cpp \
     gameplay/pacman.cpp \
     gameplay/main.cpp \
     gameplay/window.cpp \
     gameplay/level.cpp \
-    gameplay/labyrinth.cpp
+    gameplay/labyrinth.cpp \
+    engines/playzone.cpp \
+    gameplay/movment.cpp
 
 
-RESOURCES += qml.qrc
+RESOURCES += \
+    res.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -37,10 +38,10 @@ HEADERS += \
     engines/entity.h \
     engines/point.h \
     engines/engine_graphics.h \
-    engines/frame.h \
     gameplay/window.h \
     gameplay/level.h \
-    gameplay/mouvement.h \
     gameplay/pacman.h \
-    gameplay/labyrinth.h
+    gameplay/labyrinth.h \
+    engines/playzone.h \
+    gameplay/movment.h
 

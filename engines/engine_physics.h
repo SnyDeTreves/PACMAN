@@ -5,14 +5,11 @@
 #include "box.h"
 #include "entity.h"
 
-using namespace engine;
-
 namespace engine
 {
     class Engine_physics
     {
-   public:
-        Box create_box(int width, int height);
+    public:
         static bool is_collision(Entity e1, Entity e2);
         static void move_entity(Entity entity, Point to);
     };

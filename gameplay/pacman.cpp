@@ -1,29 +1,26 @@
 #include "pacman.h"
 
-namespace gameplay
+using namespace gameplay;
+
+Pacman::Pacman(int x, int y, Core_kernel *ker, int width, int height) : Entity(x, y, width, height, ker)
+{}
+
+Pacman::Pacman(int x, int y, QString img_path, Core_kernel *ker, int width, int height) : Entity(x, y, width, height, ker)
 {
+    this->img_path = img_path;
+}
 
-    Pacman::Pacman(int x, int y, Core_kernel *ker, int width, int height) : Entity(x, y, width, height, ker)
-    {
-    }
+void Pacman::set_heading(void (*head)(engine::Entity))
+{
+    this->head = head;
+}
 
-    Pacman::Pacman(int x, int y, QString img_path, Core_kernel *ker, int width, int height) : Entity(x, y, width, height, ker)
-    {
-        this->img_path = img_path;
-    }
+void Pacman::move()
+{
+    head(*this);
+}
 
-    void Pacman::set_heading(void (*head)(Entity))
-    {
-        this->head = *head;
-    }
-
-    void Pacman::move()
-    {
-        head(*this);
-    }
-
-    void Pacman::update_entity()
-    {
-        move();
-    }
+void Pacman::update_entity()
+{
+    move();
 }

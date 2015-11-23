@@ -4,7 +4,7 @@
 #include <string>
 #include <QString>
 #include "engines/entity.h"
-#include "gameplay/mouvement.h"
+#include "gameplay/movment.h"
 #include "engines/core_kernel.h"
 
 namespace gameplay

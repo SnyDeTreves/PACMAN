@@ -1,5 +1,7 @@
 #include "labyrinth.h"
 
+using namespace gameplay;
+
 Labyrinth::Labyrinth(char* path_file)
 {
     FILE * pFile;
@@ -26,11 +28,8 @@ Labyrinth::Labyrinth(char* path_file)
     }
 }
 
-Entity Labyrinth::getWall(int x, int y)
+engine::Entity Labyrinth::getWall(int x, int y)
 {
-    if(this->matrix[x][y])
-    {
-        return Entity(x*width_wall, y*width_wall, width_wall, width_wall);
-    }
-    return Entity(x*width_wall, y*width_wall, 0, 0);
+    if(this->matrix[x][y]) return engine::Entity(x*width_wall, y*width_wall, width_wall, width_wall);
+    else return engine::Entity(x*width_wall, y*width_wall, 0, 0);
 }

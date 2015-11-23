@@ -4,13 +4,9 @@
 #include "box.h"
 #include "point.h"
 
-
-
-using namespace engine;
-
 namespace engine
 {
-    class Core_kernel;
+    class Core_kernel;//forward declaration car on ne peut pas inclure directement core_kernel.h => cela créerait une inclusion mutuelle vu que entity.h est inclus dans core_kernel
 
     class Entity
     {
@@ -27,7 +23,7 @@ namespace engine
         Box get_box();
         bool is_null();
         void set_pos(Point to);
-        void update_entity();
+        virtual void update_entity();
     };
 }
 

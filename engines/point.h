@@ -10,26 +10,26 @@ namespace engine
     class Point
     {
     private:
-        int pos_x;
-        int pos_y;
+        int x;
+        int y;
     public:
         Point();
-        Point(int x, int y);
-        int get_pos_x();
-        int get_pos_y();
+        Point(int _x, int _y);
+        int get_x();
+        int get_y();
         Point& operator+=(const Point& rhs);
         Point& operator-=(const Point& rhs);
     };
 
     inline bool operator==(Point& lhs, Point& rhs)
     {
-        return lhs.get_pos_x() == rhs.get_pos_x()
-                && lhs.get_pos_y() == rhs.get_pos_y();
+        return lhs.get_x() == rhs.get_x()
+                && lhs.get_y() == rhs.get_y();
     }
     inline bool operator!=(Point& lhs, Point& rhs)
     {
-        return lhs.get_pos_x() != rhs.get_pos_x()
-                || lhs.get_pos_y() != rhs.get_pos_y();
+        return lhs.get_x() != rhs.get_x()
+                || lhs.get_y() != rhs.get_y();
     }
 
     inline Point operator+(Point lhs, const Point& rhs)
@@ -45,7 +45,7 @@ namespace engine
 
     inline ostream& operator<<(ostream& stream, Point p)
     {
-      stream << "(" << p.get_pos_x() << "," << p.get_pos_y() << ")";
+      stream << "(" << p.get_x() << "," << p.get_y() << ")";
       return stream;
     }
 }

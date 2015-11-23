@@ -1,6 +1,30 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>engines/box.cpp</file>
+        <file>engines/box.h</file>
+        <file>engines/core_kernel.cpp</file>
+        <file>engines/core_kernel.h</file>
+        <file>engines/engine_graphics.cpp</file>
+        <file>engines/engine_graphics.h</file>
+        <file>engines/engine_physics.cpp</file>
+        <file>engines/engine_physics.h</file>
+        <file>engines/entity.cpp</file>
+        <file>engines/entity.h</file>
+        <file>engines/playzone.cpp</file>
+        <file>engines/playzone.h</file>
+        <file>engines/point.cpp</file>
+        <file>engines/point.h</file>
+        <file>gameplay/labyrinth.cpp</file>
+        <file>gameplay/labyrinth.h</file>
+        <file>gameplay/level.cpp</file>
+        <file>gameplay/level.h</file>
+        <file>gameplay/main.cpp</file>
+        <file>gameplay/movment.cpp</file>
+        <file>gameplay/movment.h</file>
+        <file>gameplay/pacman.cpp</file>
+        <file>gameplay/pacman.h</file>
+        <file>gameplay/window.cpp</file>
+        <file>gameplay/window.h</file>
     </qresource>
 </RCC>
-

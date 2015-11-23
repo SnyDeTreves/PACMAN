@@ -7,11 +7,10 @@
 #include <QLabel>
 #include <QLCDNumber>
 #include <vector>
-#include <string>
-#include "frame.h"
+#include "playzone.h"
 
-#define WIDTH 512
-#define HEIGHT 512
+#define WIDTH 600
+#define HEIGHT 600
 
 namespace engine
 {
@@ -19,7 +18,7 @@ namespace engine
     {
     private:
 		QGridLayout *layout;
-        engine::Frame *play_zone;
+        engine::Playzone *play_zone;
         vector<QLabel*> *labels;
         vector<QLCDNumber*> *numbers;
 
@@ -28,8 +27,8 @@ namespace engine
         Engine_graphics(int width, int height);
         void create_label(QString text, int row, int col, int width=1, int height=1, Qt::Alignment alignment=0);
         void create_number(int initial_value, int nb_digit, int row, int col, int width=1, int height=1);
-        void set_background(QString img_path);
-        engine::Frame* get_play_zone(){return play_zone;};
+        void set_background(QString background_path);
+        engine::Playzone* get_play_zone(){return play_zone;};
     };
 }
 

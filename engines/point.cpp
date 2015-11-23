@@ -1,32 +1,32 @@
 #include "point.h"
 
-namespace engine
+using namespace engine;
+
+Point::Point() : x(0), y(0)
+{}
+Point::Point(int _x, int _y) : x(_x), y(_y)
+{}
+
+int Point::get_x()
 {
-    Point::Point() : pos_x(0), pos_y(0)
-    {}
-    Point::Point(int x, int y) : pos_x(x), pos_y(y)
-    {}
-
-    int Point::get_pos_x()
-    {
-        return this->pos_x;
-    }
-
-    int Point::get_pos_y()
-    {
-        return this->pos_y;
-    }
-
-    Point& Point::operator+=(const Point& rhs)
-    {
-        this->pos_x += rhs.pos_x;
-        this->pos_y += rhs.pos_y;
-        return *this;
-    }
-    Point& Point::operator-=(const Point& rhs)
-    {
-        this->pos_x -= rhs.pos_x;
-        this->pos_y -= rhs.pos_y;
-        return *this;
-    }
+    return this->x;
 }
+
+int Point::get_y()
+{
+    return this->y;
+}
+
+Point& Point::operator+=(const Point& rhs)
+{
+    this->x += rhs.x;
+    this->y += rhs.y;
+    return *this;
+}
+Point& Point::operator-=(const Point& rhs)
+{
+    this->x -= rhs.x;
+    this->y -= rhs.y;
+    return *this;
+}
+

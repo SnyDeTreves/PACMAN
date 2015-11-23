@@ -13,12 +13,12 @@ int main(int argc, char *argv[])
     Core_kernel kernel(tmp,argv);
 
 
-    Window w("ressources/pacman_layout.JPG");
+    Window w("qrc:/ressources/pacman_layout.JPG");
 
 
     //std::cout << "deux"<< std::endl;
 
-    Pacman pacman(0,0,"ressources/pacman.png",&kernel);
+    Pacman pacman(0,0,"qrc:/ressources/pacman.png",&kernel);
 
     //std::cout << "trois"<< std::endl;
 

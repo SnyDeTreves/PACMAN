@@ -2,18 +2,18 @@
 
 using namespace engine;
 
-
 Engine_graphics::Engine_graphics() : QWidget()
 {
-    play_zone = new Frame();
+    play_zone = new Playzone();
     layout = new QGridLayout();
     
-	layout->addWidget(play_zone,1,0,8,8);
+    layout->addWidget(play_zone,1,0,8,8);
     
     labels = new vector<QLabel*>();
     numbers = new vector<QLCDNumber*>();
     
     setLayout(layout);
+    setForegroundRole(QPalette::Shadow);
     setWindowTitle("Pac-Man");
 
     resize(WIDTH,HEIGHT);
@@ -21,7 +21,7 @@ Engine_graphics::Engine_graphics() : QWidget()
 
 Engine_graphics::Engine_graphics(int width, int height) : QWidget()
 {
-	play_zone = new Frame();
+    play_zone = new Playzone();
     layout = new QGridLayout();
     
     layout->addWidget(play_zone,1,0,8,8);
@@ -46,19 +46,14 @@ void Engine_graphics::create_label(QString text, int row, int col, int width, in
 void Engine_graphics::create_number(int initial_value, int nb_digit, int row, int col, int width, int height)
 {
     QLCDNumber *n = new QLCDNumber(nb_digit);
-	n->setSegmentStyle(QLCDNumber::Filled);
+    n->setSegmentStyle(QLCDNumber::Flat);
 	n->display(initial_value);
-    //if(alignment) n->setAlignment(alignment);
     layout->addWidget(n,row,col,width,height);
     numbers->push_back(n);
 }
 
-void Engine_graphics::set_background(QString img_path)
+void Engine_graphics::set_background(QString background_path)
 {
-    QPixmap bkgnd(img_path);
-    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
-    QPalette palette;
-    palette.setBrush(QPalette::Background, bkgnd);
-    this->setPalette(palette);
+    play_zone->setBackgroundBrush(QBrush(QImage(background_path)));
 }
 
