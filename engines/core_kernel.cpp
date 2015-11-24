@@ -1,4 +1,5 @@
 #include "core_kernel.h"
+#include <iostream>
 
 using namespace engine;
 
@@ -17,5 +18,12 @@ void Core_kernel::main_loop()
     for(Entity *entity:entities_list)
     {
         entity->update_entity();
+        std::cout << "test" << std::endl;
     }
+}
+
+int Core_kernel::exec()
+{
+    //main_loop();
+    return QApplication::exec();
 }

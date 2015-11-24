@@ -10,7 +10,7 @@ Engine_graphics::Engine_graphics(QString background_path) : QGraphicsView()
 
     QPixmap pim(background_path);
 
-    scene->setBackgroundBrush(pim.scaled(512,512,Qt::IgnoreAspectRatio,Qt::SmoothTransformation));
+    scene->setBackgroundBrush(pim.scaled(MAPWIDTH,MAPHEIGHT,Qt::IgnoreAspectRatio,Qt::SmoothTransformation));
 
     this->setGeometry(0,50,MAPWIDTH,MAPHEIGHT+2*VMARGIN);
     this->setScene(scene);

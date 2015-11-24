@@ -2,12 +2,16 @@
 
 using namespace gameplay;
 
-Level::Level(Core_kernel *ker)
+Level::Level(int argc, char *argv[])
 {
-    //this->labyrinth = new Labyrinth("ressources/labyrinth");
-    this->pacman = new Pacman(0,0);
+    this->kernel = new Core_kernel(argc, argv);
 
-    ker->add_entity(this->pacman);
+    Engine_graphics graph(":/ressources/pacman_layout.JPG");
+
+    //this->labyrinth = new Labyrinth("ressources/labyrinth.txt");
+    this->pacman = new Pacman(0,0, ":/ressources/pacman.png");
+
+    this->kernel->add_entity(this->pacman);
 }
 
 void Level::on_key_up()
@@ -25,4 +29,9 @@ void Level::on_key_left()
 void Level::on_key_right()
 {
     this->pacman->set_heading(&Movment::move_west);
+}
+
+int Level::exec()
+{
+    return kernel->exec();
 }
