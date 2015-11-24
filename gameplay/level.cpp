@@ -4,12 +4,10 @@ using namespace gameplay;
 
 Level::Level(Core_kernel *ker)
 {
-    this->pacman = new Pacman(0,0,ker);
-}
+    //this->labyrinth = new Labyrinth("ressources/labyrinth");
+    this->pacman = new Pacman(0,0);
 
-Level::Level(Pacman *pac)
-{
-    this->pacman = pac;
+    ker->add_entity(this->pacman);
 }
 
 void Level::on_key_up()

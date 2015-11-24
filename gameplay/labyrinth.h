@@ -1,10 +1,11 @@
 #ifndef LABYRINTH_H
 #define LABYRINTH_H
 #define n_max 40
-#define width_wall 15
+#define WIDTH_WALL 15
 
 #include <stdio.h>
 #include "engines/entity.h"
+#include "labyrinth.h"
 
 namespace gameplay
 {

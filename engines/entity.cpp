@@ -9,15 +9,6 @@ Entity::Entity(int x, int y, int width, int height) : position(Point(x, y)), hit
 Entity::Entity(Point pos, Box box) : position(pos), hitbox(box)
 {}
 
-Entity::Entity(int x, int y, int width, int height, Core_kernel *ker) : position(Point(x, y)), hitbox(Box(width, height))
-{
-    ker->add_entity(this);
-}
-Entity::Entity(Point pos, Box box, Core_kernel *ker) : position(pos), hitbox(box)
-{
-    ker->add_entity(this);
-}
-
 Point Entity::get_pos()
 {
     return this->position;

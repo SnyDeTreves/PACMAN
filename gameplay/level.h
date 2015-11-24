@@ -3,11 +3,13 @@
 
 #include "engines/core_kernel.h"
 #include "pacman.h"
+#include "labyrinth.h"
 
 namespace gameplay{
     class Level
     {
     private:
+        Labyrinth *labyrinth;
         Pacman *pacman;
         void on_key_up();
         void on_key_down();
@@ -15,7 +17,6 @@ namespace gameplay{
         void on_key_right();
     public:
         Level(Core_kernel *ker);
-        Level(Pacman *pac);
     };
 }
 

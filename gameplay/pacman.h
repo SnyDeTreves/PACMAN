@@ -15,8 +15,8 @@ namespace gameplay
         QString img_path;
         void (*head)(Entity);
     public:
-        Pacman(int x, int y, Core_kernel *ker, int width=15, int height=15);
-        Pacman(int x, int y, QString img_path, Core_kernel *ker, int width=15, int height=15);
+        Pacman(int x, int y, int width=15, int height=15);
+        Pacman(int x, int y, QString img_path, int width=15, int height=15);
         void set_heading(void (*head)(Entity));
         void move();
         void update_entity();

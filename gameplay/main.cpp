@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     Engine_graphics graph(":/ressources/pacman_layout.JPG");
 
 
-    Pacman pacman(0,0,":/ressources/pacman.png",&kernel);
+    Pacman pacman(0,0,":/ressources/pacman.png");
 
 
     return kernel.exec();

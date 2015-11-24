@@ -2,10 +2,10 @@
 
 using namespace gameplay;
 
-Pacman::Pacman(int x, int y, Core_kernel *ker, int width, int height) : Entity(x, y, width, height, ker)
+Pacman::Pacman(int x, int y, int width, int height) : Entity(x, y, width, height)
 {}
 
-Pacman::Pacman(int x, int y, QString img_path, Core_kernel *ker, int width, int height) : Entity(x, y, width, height, ker)
+Pacman::Pacman(int x, int y, QString img_path, int width, int height) : Entity(x, y, width, height)
 {
     this->img_path = img_path;
 }
