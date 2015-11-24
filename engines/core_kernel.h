@@ -15,6 +15,7 @@ namespace engine
         Core_kernel(int &argc, char* argv[]);
         void add_entity(Entity *e);
         void main_loop();
+        int exec();
     };
 }
 

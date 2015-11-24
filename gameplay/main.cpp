@@ -7,16 +7,12 @@ using namespace gameplay;
 
 int main(int argc, char *argv[])
 {
-    int &tmp = argc;
-    Core_kernel kernel(tmp,argv);
+    Core_kernel kernel(argc,argv);
 
     Engine_graphics graph(":/ressources/pacman_layout.JPG");
 
 
     Pacman pacman(0,0,":/ressources/pacman.png",&kernel);
 
-
     return kernel.exec();
 }
-
-
