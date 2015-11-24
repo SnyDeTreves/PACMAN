@@ -15,10 +15,8 @@ SOURCES += \
     engines/engine_graphics.cpp \
     gameplay/pacman.cpp \
     gameplay/main.cpp \
-    gameplay/window.cpp \
     gameplay/level.cpp \
     gameplay/labyrinth.cpp \
-    engines/playzone.cpp \
     gameplay/movment.cpp
 
 
@@ -37,11 +35,9 @@ HEADERS += \
     engines/engine_physics.h \
     engines/entity.h \
     engines/point.h \
-    engines/engine_graphics.h \
-    gameplay/window.h \
     gameplay/level.h \
     gameplay/pacman.h \
     gameplay/labyrinth.h \
-    engines/playzone.h \
-    gameplay/movment.h
+    gameplay/movment.h \
+    engines/engine_graphics.h
 

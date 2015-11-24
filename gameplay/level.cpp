@@ -1,6 +1,6 @@
 #include "level.h"
 
-using namespace engine;
+using namespace gameplay;
 
 Level::Level(Core_kernel *ker)
 {

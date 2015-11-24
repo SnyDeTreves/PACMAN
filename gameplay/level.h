@@ -1,7 +1,6 @@
 #ifndef LEVEL_H
 #define LEVEL_H
 
-#include "engines/playzone.h"
 #include "engines/core_kernel.h"
 #include "pacman.h"
 
