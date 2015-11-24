@@ -9,6 +9,7 @@
 #include <QGraphicsScene>
 #include <QString>
 #include <QPixmap>
+#include <QGraphicsTextItem>
 
 namespace engine
 {
@@ -19,6 +20,7 @@ namespace engine
 
     public:
         Engine_graphics(QString background_path);
+        void add_text(QString text, int number=-1);
     };
 }
 

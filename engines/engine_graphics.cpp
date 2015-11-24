@@ -16,3 +16,11 @@ Engine_graphics::Engine_graphics(QString background_path) : QGraphicsView()
     this->setScene(scene);
     this->show();
 }
+
+//void Engine_graphics::add_text(QString text, int number)
+//{
+//    QGraphicsTextItem item();
+//    if(number != -1) item.setPlainText(text + QString::number(number));
+//    else item.setPlainText(text);
+//    item.setDefaultTextColor(Qt::white);
+//}
