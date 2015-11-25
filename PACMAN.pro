@@ -17,7 +17,9 @@ SOURCES += \
     gameplay/main.cpp \
     gameplay/level.cpp \
     gameplay/labyrinth.cpp \
-    gameplay/movment.cpp
+    gameplay/movment.cpp \
+    engines/textitem.cpp \
+    engines/textnumberitem.cpp
 
 
 RESOURCES += \
@@ -39,5 +41,7 @@ HEADERS += \
     gameplay/pacman.h \
     gameplay/labyrinth.h \
     gameplay/movment.h \
-    engines/engine_graphics.h
+    engines/engine_graphics.h \
+    engines/textnumberitem.h \
+    engines/textitem.h
 

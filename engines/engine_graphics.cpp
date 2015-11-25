@@ -1,7 +1,5 @@
 #include "engine_graphics.h"
 
-#include <iostream>
-
 using namespace engine;
 
 Engine_graphics::Engine_graphics(QString background_path) : QGraphicsView()
@@ -17,10 +15,17 @@ Engine_graphics::Engine_graphics(QString background_path) : QGraphicsView()
     this->show();
 }
 
-//void Engine_graphics::add_text(QString text, int number)
-//{
-//    QGraphicsTextItem item();
-//    if(number != -1) item.setPlainText(text + QString::number(number));
-//    else item.setPlainText(text);
-//    item.setDefaultTextColor(Qt::white);
-//}
+void Engine_graphics::add_text(QString text, bool with_numer, int number)
+{
+    TextItem *item;
+    if(with_numer)
+    {
+        item = dynamic_cast<TextItem*>(new TextNumberItem(text,number));
+        scene->addItem(item);
+    }
+    else
+    {
+        TextItem *item = new TextItem(text);
+        scene->addItem(item);
+    }
+}
