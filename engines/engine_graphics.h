@@ -9,6 +9,7 @@
 #include <QGraphicsScene>
 #include <QString>
 #include <QPixmap>
+#include <QPoint>
 
 #include "textitem.h"
 #include "textnumberitem.h"

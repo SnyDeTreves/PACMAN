@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
     Core_kernel ker(argc, argv);
 
     Engine_graphics graph(":/ressources/pacman_layout.JPG");
-    graph.add_text("test",false,5);
+    graph.add_text("test",true,5);
 
     return ker.exec();
 

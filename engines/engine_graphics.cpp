@@ -15,7 +15,7 @@ Engine_graphics::Engine_graphics(QString background_path) : QGraphicsView()
     this->show();
 }
 
-void Engine_graphics::add_text(QString text, bool with_numer, int number)
+void Engine_graphics::add_text(QString text, QPoint pos, bool with_numer, int number)
 {
     TextItem *item;
     if(with_numer)
@@ -28,4 +28,5 @@ void Engine_graphics::add_text(QString text, bool with_numer, int number)
         TextItem *item = new TextItem(text);
         scene->addItem(item);
     }
+    item->setPos(pos);
 }
