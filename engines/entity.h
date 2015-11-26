@@ -4,6 +4,11 @@
 #include "box.h"
 #include "point.h"
 
+/*!
+ * \namespace engine
+ *
+ * Namespace containing the "game engine" side of the project as a library
+ */
 namespace engine
 {
     class Core_kernel;//forward declaration car on ne peut pas inclure directement core_kernel.h => cela créerait une inclusion mutuelle vu que entity.h est inclus dans core_kernel

@@ -5,6 +5,11 @@
 
 using namespace std;
 
+/*!
+ * \namespace engine
+ *
+ * Namespace containing the "game engine" side of the project as a library
+ */
 namespace engine
 {
     class Point

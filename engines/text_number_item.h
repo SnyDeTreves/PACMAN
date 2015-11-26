@@ -3,6 +3,11 @@
 
 #include "text_item.h"
 
+/*!
+ * \namespace engine
+ *
+ * Namespace containing the "game engine" side of the project as a library
+ */
 namespace engine
 {
     class TextNumberItem : public TextItem

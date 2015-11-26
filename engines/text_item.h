@@ -4,6 +4,11 @@
 #include <QGraphicsTextItem>
 #include <QString>
 
+/*!
+ * \namespace engine
+ *
+ * Namespace containing the "game engine" side of the project as a library
+ */
 namespace engine
 {
     class TextItem : public QGraphicsTextItem
