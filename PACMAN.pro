@@ -18,8 +18,8 @@ SOURCES += \
     gameplay/level.cpp \
     gameplay/labyrinth.cpp \
     gameplay/movment.cpp \
-    engines/textitem.cpp \
-    engines/textnumberitem.cpp
+    engines/text_item.cpp \
+    engines/text_number_item.cpp
 
 
 RESOURCES += \
@@ -42,6 +42,6 @@ HEADERS += \
     gameplay/labyrinth.h \
     gameplay/movment.h \
     engines/engine_graphics.h \
-    engines/textnumberitem.h \
-    engines/textitem.h
+    engines/text_item.h \
+    engines/text_number_item.h
 

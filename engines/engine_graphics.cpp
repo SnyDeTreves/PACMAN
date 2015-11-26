@@ -10,10 +10,11 @@ Engine_graphics::Engine_graphics(QString background_path) : QGraphicsView()
 
     scene->setBackgroundBrush(pim.scaled(MAPWIDTH,MAPHEIGHT,Qt::IgnoreAspectRatio,Qt::SmoothTransformation));
 
-    this->setGeometry(0,50,MAPWIDTH,MAPHEIGHT+2*VMARGIN);
+    this->setGeometry(0,50,MAPWIDTH,MAPHEIGHT);
     this->setScene(scene);
     this->show();
 }
+
 
 void Engine_graphics::add_text(QString text, QPoint pos, bool with_numer, int number)
 {
@@ -28,5 +29,13 @@ void Engine_graphics::add_text(QString text, QPoint pos, bool with_numer, int nu
         TextItem *item = new TextItem(text);
         scene->addItem(item);
     }
+    item->setPos(pos);
+}
+
+void Engine_graphics::add_character(QString img_path, QPoint pos)
+{
+    QGraphicsPixmapItem *item = new QGraphicsPixmapItem();
+    item->setPixmap(QPixmap(img_path));
+    scene->addItem(item);
     item->setPos(pos);
 }

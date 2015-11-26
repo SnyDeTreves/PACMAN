@@ -1,4 +1,4 @@
-#include "textitem.h"
+#include "text_item.h"
 
 using namespace engine;
 

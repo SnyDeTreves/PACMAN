@@ -1,7 +1,7 @@
 #ifndef TEXTNUMBERITEM
 #define TEXTNUMBERITEM
 
-#include "textitem.h"
+#include "text_item.h"
 
 namespace engine
 {
