@@ -3,7 +3,7 @@
 
 using namespace engine;
 
-Core_kernel::Core_kernel(int &argc, char* argv[]) : QApplication(argc,argv)
+Core_kernel::Core_kernel(int argc, char* argv[])// : QApplication(argc,argv)
 {
     this->entities_list = std::vector<Entity*>();
 }

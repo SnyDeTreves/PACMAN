@@ -29,7 +29,7 @@ namespace engine
      * Extends QApplication, the main class for graphic applications
      * of Qt
      */
-    class Core_kernel : public QApplication
+    class Core_kernel //: public QApplication
     {
     private:
         std::vector<Entity*> entities_list; /*!< Vector of all the game objects created, modelized by the Entity class */
@@ -39,7 +39,7 @@ namespace engine
          * \param argc number of execution parameters of the main, requested by QApplication
          * \param argv array of execution parameters of the main, requested by QApplication
          */
-        Core_kernel(int &argc, char* argv[]);
+        Core_kernel(int argc, char* argv[]);
 
         /*!
          * \brief Adds a game_objeect to entities_list
