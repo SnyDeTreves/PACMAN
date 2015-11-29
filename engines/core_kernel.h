@@ -5,7 +5,7 @@
  * \file core_kernel.h
  * \brief Core of the game engine
  * \author Guélaud Lepetit
- * /
+ */
 
 #include <vector>
 #include <QApplication>
@@ -32,7 +32,7 @@ namespace engine
     class Core_kernel : public QApplication
     {
     private:
-        vector<Entity*> entities_list; /*!< Vector of all the game objects created, modelized by the Entity class */
+        std::vector<Entity*> entities_list; /*!< Vector of all the game objects created, modelized by the Entity class */
     public:
         /*!
          * \brief Core_kernel constructor

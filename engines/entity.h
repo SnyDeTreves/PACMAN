@@ -1,8 +1,9 @@
 #ifndef ENTITY
 #define ENTITY
 
+#include <QPoint>
+#include <QString>
 #include "box.h"
-#include "point.h"
 
 /*!
  * \namespace engine
@@ -11,21 +12,19 @@
  */
 namespace engine
 {
-    class Core_kernel;//forward declaration car on ne peut pas inclure directement core_kernel.h => cela créerait une inclusion mutuelle vu que entity.h est inclus dans core_kernel
-
     class Entity
     {
     private:
-        Point position;
+        QPoint position;
         Box hitbox;
-        string path_skin;
+        QString path_skin;
     public:
         Entity(int x, int y, int width, int height);
-        Entity(Point pos, Box box);
-        Point get_pos();
+        Entity(QPoint pos, Box box);
+        QPoint get_pos();
         Box get_box();
         bool is_null();
-        void set_pos(Point to);
+        void set_pos(QPoint to);
         virtual void update_entity();
     };
 }

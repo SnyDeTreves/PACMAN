@@ -8,7 +8,7 @@
  * \file engine_graphics.h
  * \brief Module in charge of the screen display
  * \author Alexandre Leonardi
- * /
+ */
 
 #include <QGraphicsView>
 #include <QGraphicsScene>

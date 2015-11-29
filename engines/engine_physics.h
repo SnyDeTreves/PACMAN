@@ -5,7 +5,7 @@
  * \file engine_physics.h
  * \brief Module in charge of computing the physic of the game
  * \author Guélaud Lepetit
- * /
+ */
 
 #include <cmath>
 #include "box.h"
@@ -37,16 +37,6 @@ namespace engine
          */
         static bool is_collision(Entity e1, Entity e2);
 
-        /*!
-         * \brief Moves a game object
-         *
-         * The movment is a teleportation and doesn't take
-         * inertia or forces into account
-         *
-         * \param entity The game object to move
-         * \param to Its  target position
-         */
-        static void move_entity(Entity entity, Point to);
     };
 }
 

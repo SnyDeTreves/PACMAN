@@ -3,13 +3,13 @@
 
 using namespace engine;
 
-Entity::Entity(int x, int y, int width, int height) : position(Point(x, y)), hitbox(Box(width, height))
+Entity::Entity(int x, int y, int width, int height) : position(QPoint(x, y)), hitbox(Box(width, height))
 {}
 
-Entity::Entity(Point pos, Box box) : position(pos), hitbox(box)
+Entity::Entity(QPoint pos, Box box) : position(pos), hitbox(box)
 {}
 
-Point Entity::get_pos()
+QPoint Entity::get_pos()
 {
     return this->position;
 }
@@ -20,10 +20,10 @@ Box Entity::get_box()
 
 bool Entity::is_null()
 {
-    return (this->get_box().get_width() == 0 && this->get_box().get_height() == 0);
+    return (this->get_box().get_height() == 0 && this->get_box().get_height() == 0);
 }
 
-void Entity::set_pos(Point to)
+void Entity::set_pos(QPoint to)
 {
     this->position = to;
 }
