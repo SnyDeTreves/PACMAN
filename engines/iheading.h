@@ -5,7 +5,7 @@
 
 namespace engine
 {
-    class Heading
+    class IHeading
     {
     public:
         virtual QPoint do_deplacment(QPoint from)=0;

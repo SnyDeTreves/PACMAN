@@ -1,6 +1,7 @@
 #include "engines/core_kernel.h"
 #include "engines/engine_graphics.h"
 #include "level.h"
+#include "pacman.h"
 
 using namespace engine;
 //using namespace gameplay;
@@ -16,6 +17,9 @@ int main(int argc, char *argv[])
     pos.setX(200);
     pos.setY(200);
     graph.add_character(":/ressources/pacman.png",pos);
+
+    gameplay::Pacman p(100,300);
+    p.update_entity();
 
     return ker.exec();
 

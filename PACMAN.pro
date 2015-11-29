@@ -22,7 +22,8 @@ SOURCES += \
     gameplay/pacman.cpp \
     gameplay/main.cpp \
     gameplay/level.cpp \
-    gameplay/labyrinth.cpp
+    gameplay/labyrinth.cpp \
+    engines/unmoving.cpp
 
 
 
@@ -44,11 +45,12 @@ HEADERS += \
     engines/text_item.h \
     engines/text_number_item.h \
     engines/hero.h \
-    engines/heading.h \
     engines/heading_east.h \
     engines/heading_west.h \
     engines/heading_north.h \
     engines/heading_south.h \
     gameplay/level.h \
     gameplay/pacman.h \
-    gameplay/labyrinth.h
+    gameplay/labyrinth.h \
+    engines/unmoving.h \
+    engines/iheading.h

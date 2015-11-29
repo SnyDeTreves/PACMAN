@@ -2,9 +2,15 @@
 
 using namespace engine;
 
-Hero::Hero(int x, int y, int width, int height):Entity(x,y,width,height){}
+Hero::Hero(int x, int y, int width, int height):Entity(x,y,width,height)
+{
+    heading = new Unmoving();
+}
 
-Hero::Hero(QPoint pos, Box box):Entity(pos, box){}
+Hero::Hero(QPoint pos, Box box):Entity(pos, box)
+{
+    heading = new Unmoving();
+}
 
 void Hero::keyPressedEvent(QKeyEvent *event)
 {
@@ -20,7 +26,7 @@ void Hero::keyPressedEvent(QKeyEvent *event)
         heading = new Heading_south();
         break;
     case Qt::Key_Up:
-        heading = dynamic_cast<Heading*>(new Heading_north());
+        heading = new Heading_north();
         break;
     default:
         break;

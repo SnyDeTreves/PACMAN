@@ -1,11 +1,11 @@
 #ifndef HEADING_RIGHT_H
 #define HEADING_RIGHT_H
 
-#include "heading.h"
+#include "iheading.h"
 
 namespace engine
 {
-    class Heading_east : public Heading
+    class Heading_east : public IHeading
     {
     public:
         QPoint do_deplacment(QPoint from);
