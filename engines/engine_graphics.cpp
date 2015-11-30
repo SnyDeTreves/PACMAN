@@ -32,10 +32,8 @@ void Engine_graphics::add_text(QString text, QPoint pos, bool with_numer, int nu
     item->setPos(pos);
 }
 
-void Engine_graphics::add_character(QString img_path, QPoint pos)
+void Engine_graphics::add_entity(Entity &e)
 {
-    QGraphicsPixmapItem *item = new QGraphicsPixmapItem();
-    item->setPixmap(QPixmap(img_path));
-    scene->addItem(item);
-    item->setPos(pos);
+    e.setPixmap(QPixmap(e.get_img_path()));
+    scene->addItem(&e);
 }

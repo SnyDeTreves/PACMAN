@@ -10,8 +10,8 @@ bool Engine_physics::is_collision(Entity e1, Entity e2)
     }
     else
     {
-        int dif_pos_w = abs(e1.get_pos().x() - e2.get_pos().x());
-        int dif_pos_h = abs(e1.get_pos().y() - e2.get_pos().y());
+        int dif_pos_w = abs(e1.pos().x() - e2.pos().x());
+        int dif_pos_h = abs(e1.pos().y() - e2.pos().y());
         int dif_box_w = abs(e1.get_box().get_width() + e2.get_box().get_width());
         int dif_box_h = abs(e1.get_box().get_height() + e2.get_box().get_height());
 

@@ -3,6 +3,7 @@
 
 #include <QKeyEvent>
 #include <QPoint>
+#include <QString>
 #include "iheading.h"
 #include "heading_east.h"
 #include "heading_north.h"
@@ -16,12 +17,13 @@ namespace engine
 {
     class Hero : public Entity
     {
+    private:
     protected:
         IHeading *heading;
     public:
-        Hero(int x, int y, int width, int height);
-        Hero(QPoint pos, Box box);
-        void keyPressedEvent(QKeyEvent *event);
+        Hero(int x, int y, int width, int height, QString img_path);
+        Hero(QPoint pos, Box box, QString img_path);
+        void keyPressEvent(QKeyEvent *event);
     };
 }
 

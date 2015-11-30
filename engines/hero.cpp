@@ -1,19 +1,20 @@
 #include "hero.h"
-
+#include <QDebug>
 using namespace engine;
 
-Hero::Hero(int x, int y, int width, int height):Entity(x,y,width,height)
+Hero::Hero(int x, int y, int width, int height, QString img_path):Entity(x,y,width,height,img_path)
 {
     heading = new Unmoving();
 }
 
-Hero::Hero(QPoint pos, Box box):Entity(pos, box)
+Hero::Hero(QPoint pos, Box box, QString img_path):Entity(pos, box,img_path)
 {
     heading = new Unmoving();
 }
 
-void Hero::keyPressedEvent(QKeyEvent *event)
+void Hero::keyPressEvent(QKeyEvent *event)
 {
+qDebug() << "test";
     switch(event->key())
     {
     case Qt::Key_Left:

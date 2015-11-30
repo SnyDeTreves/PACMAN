@@ -3,6 +3,7 @@
 
 #include <QPoint>
 #include <QString>
+#include <QGraphicsPixmapItem>
 #include "box.h"
 
 /*!
@@ -12,20 +13,19 @@
  */
 namespace engine
 {
-    class Entity
+    class Entity : public QGraphicsPixmapItem
     {
     private:
-        QPoint position;
         Box hitbox;
-        QString path_skin;
+        QString img_path;
     public:
-        Entity(int x, int y, int width, int height);
-        Entity(QPoint pos, Box box);
-        QPoint get_pos();
-        Box get_box();
+        Entity(int x, int y, int width, int height, QString img_path);
+        Entity(QPoint pos, Box box, QString img_path);
         bool is_null();
-        void set_pos(QPoint to);
         virtual void update_entity();
+
+        Box get_box(){return hitbox;}
+        QString get_img_path(){return img_path;}
     };
 }
 

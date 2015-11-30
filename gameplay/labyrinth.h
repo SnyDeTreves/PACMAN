@@ -15,7 +15,7 @@ namespace gameplay
         bool matrix[n_max][n_max];
     public:
         Labyrinth(char* path_file);
-        engine::Entity getWall(int x, int y);
+     //   engine::Entity getWall(int x, int y);
     };
 }
 

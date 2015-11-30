@@ -15,10 +15,21 @@ int main(int argc, char *argv[])
 
     Engine_graphics graph(":/ressources/pacman_layout.JPG");
 
-    Pacman p(100,100);
-
     QPoint pos(200,200);
-    graph.add_character(":/ressources/pacman.png",pos);
+    Box box(15,15);
+
+    Pacman p(pos,box,":/ressources/pacman.png");
+
+    graph.add_entity(p);
+
+    p.setFlags(QGraphicsItem::ItemIsFocusable);
+    p.setFocus();
+
+
+
+    //p.update_entity();
+
+     //ker.main_loop();
 
     return app.exec();
 

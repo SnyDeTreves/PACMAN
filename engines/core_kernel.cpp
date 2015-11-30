@@ -1,10 +1,11 @@
 #include "core_kernel.h"
-#include <iostream>
+#include <QDebug>
 
 using namespace engine;
 
 Core_kernel::Core_kernel(int argc, char* argv[])// : QApplication(argc,argv)
 {
+    over = false;
     this->entities_list = std::vector<Entity*>();
 }
 
@@ -15,10 +16,13 @@ void Core_kernel::add_entity(Entity *e)
 
 void Core_kernel::main_loop()
 {
-    for(Entity *entity:entities_list)
+    while(!over)
     {
-        entity->update_entity();
-        std::cout << "test" << std::endl;
+        for(Entity *entity:entities_list)
+        {
+            //entity->update_entity();
+            qDebug() << "test";
+        }
     }
     //update_physics -> on teste s'il y a des collisions avec les nouvelles positions des entities
     //update_states -> est-ce qu'il y a eu des modifs du nombre de vies ou du score ?
@@ -27,8 +31,16 @@ void Core_kernel::main_loop()
 
 }
 
+
+
 int Core_kernel::exec()
 {
     //main_loop();
     return QApplication::exec();
+}
+
+void Core_kernel::keyPressEvent(QKeyEvent *event)
+{
+    qDebug() << event->key();
+    if(event->key() == Qt::Key_Escape) over = true;
 }

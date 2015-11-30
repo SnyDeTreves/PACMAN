@@ -29,8 +29,8 @@ Labyrinth::Labyrinth(char* path_file)
     }
 }
 
-engine::Entity Labyrinth::getWall(int x, int y)
-{
-    if(this->matrix[x][y]) return engine::Entity(x*WIDTH_WALL, y*WIDTH_WALL, WIDTH_WALL, WIDTH_WALL);
-    else return engine::Entity(x*WIDTH_WALL, y*WIDTH_WALL, 0, 0);
-}
+//engine::Entity Labyrinth::getWall(int x, int y)
+//{
+//    if(this->matrix[x][y]) return engine::Entity(x*WIDTH_WALL, y*WIDTH_WALL, WIDTH_WALL, WIDTH_WALL);
+//    else return engine::Entity(x*WIDTH_WALL, y*WIDTH_WALL, 0, 0);
+//}

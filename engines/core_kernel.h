@@ -9,6 +9,7 @@
 
 #include <vector>
 #include <QApplication>
+#include <QKeyEvent>
 #include "entity.h"
 
 /*!
@@ -33,6 +34,8 @@ namespace engine
     {
     private:
         std::vector<Entity*> entities_list; /*!< Vector of all the game objects created, modelized by the Entity class */
+        bool over;
+
     public:
         /*!
          * \brief Core_kernel constructor
@@ -63,6 +66,8 @@ namespace engine
          * \return an int
          */
         int exec();
+
+        void keyPressEvent(QKeyEvent *event);
     };
 }
 
