@@ -66,8 +66,6 @@ namespace engine
          * \return an int
          */
         int exec();
-
-        void keyPressEvent(QKeyEvent *event);
     };
 }
 

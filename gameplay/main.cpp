@@ -25,11 +25,7 @@ int main(int argc, char *argv[])
     p.setFlags(QGraphicsItem::ItemIsFocusable);
     p.setFocus();
 
-
-
-    //p.update_entity();
-
-     //ker.main_loop();
+    ker.main_loop();
 
     return app.exec();
 

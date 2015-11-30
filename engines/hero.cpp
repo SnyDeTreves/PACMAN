@@ -14,7 +14,7 @@ Hero::Hero(QPoint pos, Box box, QString img_path):Entity(pos, box,img_path)
 
 void Hero::keyPressEvent(QKeyEvent *event)
 {
-qDebug() << "test";
+qDebug() << event->key();;
     switch(event->key())
     {
     case Qt::Key_Left:
@@ -29,6 +29,9 @@ qDebug() << "test";
     case Qt::Key_Up:
         heading = new Heading_north();
         break;
+    case Qt::Key_Escape:
+        break;
+
     default:
         break;
     }
