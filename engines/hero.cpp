@@ -14,7 +14,7 @@ Hero::Hero(QPoint pos, Box box, QString img_path):Entity(pos, box,img_path)
 
 void Hero::keyPressEvent(QKeyEvent *event)
 {
-qDebug() << event->key();;
+qDebug() << event->text();;
     switch(event->key())
     {
     case Qt::Key_Left:

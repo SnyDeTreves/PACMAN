@@ -1,4 +1,4 @@
-#include "engines/core_kernel.h"
+#include "engines/thread_controller.h"
 #include "engines/engine_graphics.h"
 #include "level.h"
 #include "pacman.h"
@@ -11,8 +11,6 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc,argv);
 
-    Core_kernel ker(argc, argv);
-
     Engine_graphics graph(":/ressources/pacman_layout.JPG");
 
     QPoint pos(200,200);
@@ -22,13 +20,12 @@ int main(int argc, char *argv[])
 
     graph.add_entity(p);
 
+
+
     p.setFlags(QGraphicsItem::ItemIsFocusable);
     p.setFocus();
 
-    ker.main_loop();
+    Thread_controller *t = new Thread_controller();
 
     return app.exec();
-
-    //Level l(argc,argv);
-    //return l.exec();
 }

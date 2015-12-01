@@ -9,7 +9,7 @@
 
 #include <vector>
 #include <QApplication>
-#include <QKeyEvent>
+#include <QObject>
 #include "entity.h"
 
 /*!
@@ -30,11 +30,12 @@ namespace engine
      * Extends QApplication, the main class for graphic applications
      * of Qt
      */
-    class Core_kernel //: public QApplication
+    class Core_kernel : public QObject
     {
+        Q_OBJECT
+
     private:
         std::vector<Entity*> entities_list; /*!< Vector of all the game objects created, modelized by the Entity class */
-        bool over;
 
     public:
         /*!
@@ -42,7 +43,7 @@ namespace engine
          * \param argc number of execution parameters of the main, requested by QApplication
          * \param argv array of execution parameters of the main, requested by QApplication
          */
-        Core_kernel(int argc, char* argv[]);
+        Core_kernel();
 
         /*!
          * \brief Adds a game_objeect to entities_list
@@ -50,22 +51,8 @@ namespace engine
          */
         void add_entity(Entity *e);
 
-        /*!
-         * \brief main loop of the program
-         *
-         * An endless loop that actualises the state of every game object and modifies
-         * the display on screen accordingly
-         */
+    public slots:
         void main_loop();
-
-        /*!
-         * \brief Only calls QApplication.exec()
-         *
-         * Redefined for clarity purposes
-         *
-         * \return an int
-         */
-        int exec();
     };
 }
 

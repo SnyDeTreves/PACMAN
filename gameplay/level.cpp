@@ -4,7 +4,7 @@ using namespace gameplay;
 
 Level::Level(int argc, char *argv[])
 {
-    this->kernel = new engine::Core_kernel(argc, argv);
+    this->kernel = new engine::Core_kernel();
 
     engine::Engine_graphics graph(":/ressources/pacman_layout.JPG");
 

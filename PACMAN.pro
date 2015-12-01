@@ -23,7 +23,8 @@ SOURCES += \
     gameplay/main.cpp \
     gameplay/level.cpp \
     gameplay/labyrinth.cpp \
-    engines/unmoving.cpp
+    engines/unmoving.cpp \
+    engines/thread_controller.cpp
 
 
 
@@ -53,4 +54,5 @@ HEADERS += \
     gameplay/pacman.h \
     gameplay/labyrinth.h \
     engines/unmoving.h \
-    engines/iheading.h
+    engines/iheading.h \
+    engines/thread_controller.h
