@@ -21,8 +21,7 @@ void Core_kernel::main_loop()
     {
         for(Entity* e : entities_list)
         {
-           qDebug() << "test";
-           qDebug() << e->pos();
+            e->update_entity();
         }
     }
 }

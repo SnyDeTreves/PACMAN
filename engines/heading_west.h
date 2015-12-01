@@ -8,7 +8,7 @@ namespace engine
     class Heading_west : public IHeading
     {
     public:
-        QPoint do_deplacment(QPoint from);
+        QPointF do_deplacment(QPointF from);
     };
 }
 

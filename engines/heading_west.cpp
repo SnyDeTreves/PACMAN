@@ -4,8 +4,7 @@
 
 using namespace engine;
 
-QPoint Heading_west::do_deplacment(QPoint from)
+QPointF Heading_west::do_deplacment(QPointF from)
 {
-    qDebug() << "west";
-    return (from + QPoint(0, -1));
+    return (from + QPointF(0, -50));
 }

@@ -14,7 +14,7 @@ namespace engine
     private:
         QThread thread;
     public:
-        Thread_controller();
+        Thread_controller(Core_kernel &ker);
         ~Thread_controller();
     signals:
         void operate();

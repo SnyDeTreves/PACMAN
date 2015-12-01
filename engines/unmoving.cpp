@@ -4,8 +4,7 @@ using namespace engine;
 
 #include <QDebug>
 
-QPoint engine::Unmoving::do_deplacment(QPoint from)
+QPointF engine::Unmoving::do_deplacment(QPointF from)
 {
-    qDebug() << "unmoving";
     return from;
 }

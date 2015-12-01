@@ -4,9 +4,8 @@ using namespace engine;
 
 #include <QDebug>
 
-QPoint Heading_east::do_deplacment(QPoint from)
+QPointF Heading_east::do_deplacment(QPointF from)
 {
-    qDebug() << "east";
-    return (from + QPoint(0, 1));
+    return (from + QPointF(0, 1));
 }
 

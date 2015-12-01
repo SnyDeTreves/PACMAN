@@ -1,8 +1,10 @@
 #include "engines/thread_controller.h"
 #include "engines/engine_graphics.h"
+#include "engines/core_kernel.h"
 #include "level.h"
 #include "pacman.h"
 #include <QApplication>
+#include <QPointF>
 
 using namespace engine;
 using namespace gameplay;
@@ -20,12 +22,13 @@ int main(int argc, char *argv[])
 
     graph.add_entity(p);
 
-
-
     p.setFlags(QGraphicsItem::ItemIsFocusable);
     p.setFocus();
 
-    Thread_controller *t = new Thread_controller();
+    Core_kernel ker;
+    ker.add_entity(&p);
+
+    Thread_controller *t = new Thread_controller(ker);
 
     return app.exec();
 }

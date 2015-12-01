@@ -1,14 +1,14 @@
 #ifndef HEADING
 #define HEADING
 
-#include <QPoint>
+#include <QPointF>
 
 namespace engine
 {
     class IHeading
     {
     public:
-        virtual QPoint do_deplacment(QPoint from)=0;
+        virtual QPointF do_deplacment(QPointF from)=0;
     };
 }
 
