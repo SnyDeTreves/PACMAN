@@ -23,7 +23,8 @@ namespace engine
     public:
         Ennemi(int x, int y, int width, int height, QString img_path);
         Ennemi(QPoint pos, Box box, QString img_path);
-        void moveOn();
+        void update_entity();
+        QPoint iA();
     };
 }
 
