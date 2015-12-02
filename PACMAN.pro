@@ -24,7 +24,9 @@ SOURCES += \
     gameplay/level.cpp \
     gameplay/labyrinth.cpp \
     engines/unmoving.cpp \
-    engines/thread_controller.cpp
+    engines/thread_controller.cpp \
+    gameplay/pacdot.cpp \
+    engines/dot.cpp
 
 
 
@@ -55,4 +57,6 @@ HEADERS += \
     gameplay/labyrinth.h \
     engines/unmoving.h \
     engines/iheading.h \
-    engines/thread_controller.h
+    engines/thread_controller.h \
+    gameplay/pacdot.h \
+    engines/dot.h

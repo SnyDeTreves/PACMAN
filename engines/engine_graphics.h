@@ -19,6 +19,7 @@
 #include "text_item.h"
 #include "text_number_item.h"
 #include "entity.h"
+#include "dot.h"
 
 /*!
  * \namespace engine
@@ -74,6 +75,7 @@ namespace engine
          * \param pos The initial position of the character, as a QPoint, in pixels
          */
         void add_entity(Entity &e);
+        void add_dot(Dot &d);
     };
 }
 

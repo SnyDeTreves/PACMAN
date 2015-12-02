@@ -3,6 +3,7 @@
 #include "engines/core_kernel.h"
 #include "level.h"
 #include "pacman.h"
+#include "pacdot.h"
 #include <QApplication>
 #include <QPointF>
 
@@ -25,8 +26,18 @@ int main(int argc, char *argv[])
     p.setFlags(QGraphicsItem::ItemIsFocusable);
     p.setFocus();
 
+    QPoint pos_d1(310,310);
+    Box box_d1(15,15);
+    PacDot d1(pos_d1,box_d1,":/ressources/pacman.png");
+    graph.add_dot(d1);
+
     Core_kernel ker;
     ker.add_entity(&p);
+    ker.add_dot(&d1);
+
+
+
+
 
     Thread_controller *t = new Thread_controller(ker);
 

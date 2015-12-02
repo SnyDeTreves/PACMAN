@@ -11,6 +11,7 @@
 #include <QApplication>
 #include <QObject>
 #include "entity.h"
+#include "dot.h"
 
 /*!
  * \namespace engine
@@ -36,6 +37,7 @@ namespace engine
 
     private:
         std::vector<Entity*> entities_list; /*!< Vector of all the game objects created, modelized by the Entity class */
+        std::vector<Dot*> dots_list;
 
     public:
         /*!
@@ -51,6 +53,7 @@ namespace engine
          */
         void add_entity(Entity *e);
 
+        void add_dot(Dot *d);
     public slots:
         void main_loop();
     };
