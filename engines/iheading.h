@@ -2,7 +2,7 @@
 #define HEADING
 
 #include <QPointF>
-
+#define FPS 0.025
 namespace engine
 {
     class IHeading
