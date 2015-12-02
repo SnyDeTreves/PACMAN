@@ -12,7 +12,11 @@ Ennemi::Ennemi(QPoint pos, Box box, QString img_path):Entity(pos, box,img_path)
     heading = new Unmoving();
 }
 
-void Ennemi::moveOn()
+QPoint Ennemi::iA()
 {
 }
 
+void Ennemi::update_entity()
+{
+
+}
