@@ -1,4 +1,4 @@
-#ifndef HERO
+    #ifndef HERO
 #define HERO
 
 #include <QKeyEvent>

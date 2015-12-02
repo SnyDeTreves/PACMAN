@@ -4,6 +4,7 @@
 #include <QPoint>
 #include <QString>
 #include <QGraphicsPixmapItem>
+#include <QObject>
 #include "box.h"
 
 /*!
@@ -13,7 +14,7 @@
  */
 namespace engine
 {
-    class Entity : public QGraphicsPixmapItem
+    class Entity : public QGraphicsPixmapItem, public QObject
     {
     private:
         Box hitbox;

@@ -12,11 +12,16 @@ namespace gameplay
 {
     class Pacman : public engine::Hero
     {
+        Q_OBJECT
+
     public:
         Pacman(int x, int y, QString img_path, int width=15, int height=15);
         Pacman(QPoint pos, engine::Box box, QString img_path);
         void update_entity();
-        void set_pos(QPointF p){setPos(p);}
+    public slots:
+        void set_pos(QPointF pos){setPos(pos);}
+    signals:
+        void pending_pos(QPointF pos);
     };
 }
 

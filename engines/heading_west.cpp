@@ -6,5 +6,5 @@ using namespace engine;
 
 QPointF Heading_west::do_deplacment(QPointF from)
 {
-    return (from + QPointF(0, -50));
+    return (from + QPointF(-1, 0));
 }
