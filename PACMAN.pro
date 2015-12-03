@@ -7,7 +7,6 @@ QT+=widgets
 QMAKE_CXXFLAGS += -g -O0
 
 SOURCES += \
-    engines/box.cpp \
     engines/core_kernel.cpp \
     engines/engine_physics.cpp \
     engines/entity.cpp \
@@ -40,7 +39,6 @@ QML_IMPORT_PATH =
 include(deployment.pri)
 
 HEADERS += \
-    engines/box.h \
     engines/core_kernel.h \
     engines/engine_physics.h \
     engines/entity.h \

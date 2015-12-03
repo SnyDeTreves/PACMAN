@@ -2,14 +2,14 @@
 
 using namespace engine;
 
-Hero::Hero(int x, int y, int width, int height, QString img_path):Entity(x,y,width,height,img_path)
+Hero::Hero(int x, int y, QString img_path):Entity(x,y,img_path)
 {
     setFlags(QGraphicsItem::ItemIsFocusable);
     setFocus();
     heading = new Unmoving();
 }
 
-Hero::Hero(QPoint pos, Box box, QString img_path):Entity(pos, box,img_path)
+Hero::Hero(QPoint pos,  QString img_path):Entity(pos, img_path)
 {
     setFlags(QGraphicsItem::ItemIsFocusable);
     setFocus();

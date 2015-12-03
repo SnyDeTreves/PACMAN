@@ -2,20 +2,16 @@
 
 using namespace engine;
 
-Entity::Entity(int x, int y, int width, int height, QString img_path) : QGraphicsPixmapItem(), hitbox(Box(width, height))
+Entity::Entity(int x, int y, QString img_path) : QGraphicsPixmapItem()
 {
     this->img_path = img_path;
     setPos(x,y);
+    collidable=true;
 }
 
-Entity::Entity(QPoint pos, Box box, QString img_path) : QGraphicsPixmapItem(), hitbox(box)
+Entity::Entity(QPoint pos, QString img_path) : QGraphicsPixmapItem()
 {
     this->img_path = img_path;
     setPos(pos);
-}
-
-
-bool Entity::is_null()
-{
-    return (this->get_box().get_height() == 0 && this->get_box().get_height() == 0);
+    collidable=true;
 }

@@ -11,7 +11,6 @@
 #include <QString>
 #include <QGraphicsPixmapItem>
 #include <QObject>
-#include "box.h"
 
 /*!
  * \namespace engine
@@ -35,26 +34,24 @@ namespace engine
     class Entity : public QGraphicsPixmapItem, public QObject
     {
     private:
-        Box hitbox; /*!< hitbox of the Entity, can be null i.e. be a 0x0 box */
         QString img_path; /*!< path to the image in the ressources of the project */
+        bool collidable; /*!< Set to true when the Entity can collide with other Entities */
     public:
         /*!
          * \brief Constructor for Entity
-         * \param x horizontal pos of the Entity in the game window (i.e. the center of its collider)
-         * \param y vertical pos of the Entity in the game window (i.e. the center of its collider)
-         * \param width width of the object's hitbox once displayed
+         * \param x horizontal pos of the Entity in the game window
+         * \param y vertical pos of the Entity in the game window
          * \param height height of the object's hitbox once displayed
          * \param img_path Path in the project ressources to the image representing the object
          */
-        Entity(int x, int y, int width, int height, QString img_path);
+        Entity(int x, int y, QString img_path);
 
         /*!
          * \brief Constructor for Entity
-         * \param pos position of the center of the object (i.e. the center of its hitbox)
-         * \param box hitbox of the object
+         * \param pos position of the center of the object
          * \param img_path Path in the project ressources to the image representing the object
          */
-        Entity(QPoint pos, Box box, QString img_path);
+        Entity(QPoint pos, QString img_path);
 
         /*!
          * \brief returns true only if the hit box is of null height and width (i.e. both ==0)
@@ -71,8 +68,9 @@ namespace engine
          */
         virtual void update_entity()=0;
 
-        Box get_box(){return hitbox;}
         QString get_img_path(){return img_path;}
+        bool is_collidable(){return collidable;}
+        void set_collidable(bool c){collidable=c;}
     };
 }
 

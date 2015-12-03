@@ -35,7 +35,7 @@ namespace gameplay
          * \param width width of the hitbox
          * \param height height of the hitbox
          */
-        PacDot(int x, int y, QString img_path, int width=15, int height=15);
+        PacDot(int x, int y, QString img_path);
 
         /*!
          * \brief Constructor
@@ -43,7 +43,7 @@ namespace gameplay
          * \param box Hitbox of the point
          * \param img_path Path to the sprite of the dot in the project ressources
          */
-        PacDot(QPoint pos, engine::Box box, QString img_path);
+        PacDot(QPoint pos, QString img_path);
 
         void update_entity(){};
     };

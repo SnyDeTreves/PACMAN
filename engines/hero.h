@@ -17,7 +17,6 @@
 #include "heading_west.h"
 #include "unmoving.h"
 #include "entity.h"
-#include "box.h"
 
 /*!
  * \namespace engine
@@ -43,21 +42,18 @@ namespace engine
     public:
         /*!
          * \brief Constructor of Hero
-         * \param x horizontal position of the center of the hero's hitbox
-         * \param y vertical position of the center of the hero's hitbox
-         * \param width width of the hitbox
-         * \param height height of the hitbox
+         * \param x horizontal position of the center of the hero
+         * \param y vertical position of the center of the hero
          * \param img_path Path to the sprite of the Hero in the project ressources
          */
-        Hero(int x, int y, int width, int height, QString img_path);
+        Hero(int x, int y, QString img_path);
 
         /*!
          * \brief Constructor of Hero
-         * \param pos Position of the center of the hitbox
-         * \param box Hitbox of the Hero
+         * \param pos Position of the center of the hero
          * \param img_path Path to the sprite of the Hero in the project ressources
          */
-        Hero(QPoint pos, Box box, QString img_path);
+        Hero(QPoint pos, QString img_path);
 
         /*!
          * \brief Receives the keyboard inputs and, if an arrow key has been pressed, changes the value of heading accordingly

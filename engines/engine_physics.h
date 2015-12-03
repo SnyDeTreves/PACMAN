@@ -8,7 +8,6 @@
  */
 
 #include <cmath>
-#include "box.h"
 #include "entity.h"
 
 /*!

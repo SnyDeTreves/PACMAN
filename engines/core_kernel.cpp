@@ -2,14 +2,15 @@
 
 using namespace engine;
 
-Core_kernel::Core_kernel() : QObject()
+Core_kernel::Core_kernel(int &argc, char *argv[]) : QObject()
 {
     this->entities_list = std::vector<Entity*>();
+    app = new QApplication(argc,argv);
 }
 
-void Core_kernel::add_entity(Entity *e)
+void Core_kernel::add_entity(Entity &e)
 {
-    this->entities_list.push_back(e);
+    this->entities_list.push_back(&e);
 }
 
 void Core_kernel::main_loop()
@@ -21,4 +22,9 @@ void Core_kernel::main_loop()
             e->update_entity();
         }
     }
+}
+
+int Core_kernel::exec()
+{
+    return app->exec();
 }

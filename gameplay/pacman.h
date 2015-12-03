@@ -12,7 +12,6 @@
 #include <QKeyEvent>
 #include "engines/hero.h"
 #include "engines/core_kernel.h"
-#include "engines/box.h"
 
 /*!
  * \namespace gameplay
@@ -32,21 +31,18 @@ namespace gameplay
     public:
         /*!
          * \brief Constructor
-         * \param x abciss of the center of the hitbox of the pacman
-         * \param y ordonate of the center of the hitbox of the pacman
+         * \param x abciss of the center of the pacman
+         * \param y ordonate of the center of the pacman
          * \param img_path Path to the sprite of the pacman in the project ressources
-         * \param width width of the hitbox, default is 15
-         * \param height height of the hitbox, default is 15
          */
-        Pacman(int x, int y, QString img_path, int width=15, int height=15);
+        Pacman(int x, int y, QString img_path);
 
         /*!
          * \brief Constructor
-         * \param pos The position of the center of the hitbox of the pacman
-         * \param box Hitbox of the pacman
+         * \param pos The position of the center of the pacman
          * \param img_path Path to the sprite of the pacman in the project ressources
          */
-        Pacman(QPoint pos, engine::Box box, QString img_path);
+        Pacman(QPoint pos, QString img_path);
 
         /*!
          * \brief Behavior of the pacman : what it does at each frame

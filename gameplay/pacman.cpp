@@ -2,12 +2,12 @@
 
 using namespace gameplay;
 
-Pacman::Pacman(int x, int y, QString img_path, int width, int height) : Hero(x, y, width, height, img_path)
+Pacman::Pacman(int x, int y, QString img_path) : Hero(x, y, img_path)
 {
     connect(this, SIGNAL(pending_pos(QPointF)), this, SLOT(set_pos(QPointF)));
 }
 
-Pacman::Pacman(QPoint pos, engine::Box box, QString img_path) : Hero(pos, box, img_path)
+Pacman::Pacman(QPoint pos, QString img_path) : Hero(pos, img_path)
 {
     connect(this, SIGNAL(pending_pos(QPointF)), this, SLOT(set_pos(QPointF)));
 }
@@ -15,7 +15,6 @@ Pacman::Pacman(QPoint pos, engine::Box box, QString img_path) : Hero(pos, box, i
 void Pacman::update_entity()
 {
 
-    QPointF bis = heading->do_deplacment(pos());
-    emit pending_pos(bis);
-    //setPos(test2);
+    QPointF target = heading->do_deplacment(pos());
+    emit pending_pos(target);
 }
