@@ -10,9 +10,9 @@ Engine_graphics::Engine_graphics(QString background_path) : QGraphicsView()
 
     scene->setBackgroundBrush(pim.scaled(pim.width(),pim.height(),Qt::IgnoreAspectRatio,Qt::SmoothTransformation));
 
-    this->setGeometry(0,50,pim.width(),pim.height());
-    this->setScene(scene);
-    this->show();
+    setGeometry(0,50,pim.width(),pim.height());
+    setScene(scene);
+    show();
 }
 
 

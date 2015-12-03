@@ -68,6 +68,12 @@ namespace engine
          */
         virtual void update_entity()=0;
 
+        /*!
+         * \brief Returns the name of the Entity subclass being used
+         * \return the name of the Entity subclass being used
+         */
+        virtual QString get_instance()=0;
+
         QString get_img_path(){return img_path;}
         bool is_collidable(){return collidable;}
         void set_collidable(bool c){collidable=c;}
