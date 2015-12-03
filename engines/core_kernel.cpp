@@ -15,22 +15,53 @@ void Core_kernel::add_entity(Entity &e)
 
 void Core_kernel::main_loop()
 {
-    while(true)
+    bool end =false;
+    while(!end)
     {
         for(Entity* e : entities_list)
         {
             e->update_entity();
-         /*   if( QString::compare(((QString) e->getInstance()), "Pacman", Qt::CaseInsensitive) ==0) {
+
+
+            if( QString::compare(((QString) e->get_instance()), "Pacman", Qt::CaseInsensitive) ==0) {
                //is it Pacman ?
+
                 for(Entity* d : entities_list)
                 {
-                    //Search for all the pacdots
-                    if( QString::compare(((QString) d->getInstance()), "Pacdot", Qt::CaseInsensitive) ==0) {
-                        //collision
+                    //PACDOTS:
+                    if( QString::compare(((QString) d->get_instance()), "Pacdot", Qt::CaseInsensitive) ==0) {
+
+                        if(Engine_physics::is_collision(*e,*d)) {
+                           qDebug()<<"Collision: Pacdot";
+                           points+=10;
+                    }
+
+                   //Enemy
+                   /* if( QString::compare(((QString) d->get_instance()), "Enemy", Qt::CaseInsensitive) ==0) {
+
+                        if(Engine_physics::is_collision(*e,*d)) {
+                           qDebug()<<"Collision: Ghost";
+
+                           if( ((Enemy) d)->isVulnerable() )
+                               points+=200;
+                           else {
+                               if(e->getLife>=0) {
+                                   e->looseLife();
+                                   qDebug()<<"-1 LIFE";
+
+                               }
+                               else {
+
+                                   qDebug()<<"GAME OVER";
+                                   end=true;
+                               }
+                           }
+                         }
+                       }*/
                     }
                 }
 
-            }*/
+            }
         }
     }
 }

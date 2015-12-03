@@ -37,6 +37,8 @@ namespace engine
      */
     class Hero : public Entity
     {
+    private:
+        int life=3; /*!< life remaining*/
     protected:
         IHeading *heading;/*!< A concrete instance of the IHeading interface that contains the movment algorithm */
     public:
@@ -60,6 +62,17 @@ namespace engine
          * \param event A Qt item describing the key that has been pressed
          */
         void keyPressEvent(QKeyEvent *event);
+
+        /*!
+         * \brief loose a Life if life>0
+         */
+        void looseLife();
+
+        /*!
+         * \brief getLife
+         * \return life remaining of pacman
+         */
+        int getLife() const;
     };
 }
 

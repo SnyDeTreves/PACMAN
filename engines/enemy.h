@@ -23,6 +23,7 @@ namespace engine
     class Enemy : public Entity
     {
     private:
+        bool vulnerability;
         AI *ai;/*< Instance of the AI class for the ennemy to select a behavior */
     public:
         /*!
@@ -39,6 +40,8 @@ namespace engine
          * \param img_path Path in the project ressources to the image representing the object
          */
         Enemy(QPoint pos,QString img_path);
+
+        bool isVulnerable();
 
         void update_entity();
     };

@@ -10,7 +10,10 @@
 #include <vector>
 #include <QObject>
 #include <QApplication>
+#include <QDebug>
 #include "entity.h"
+#include "engine_physics.h"
+#include "enemy.h"
 
 /*!
  * \namespace engine
@@ -35,6 +38,7 @@ namespace engine
         Q_OBJECT
         std::vector<Entity*> entities_list; /*!< Vector of all the game objects created, modelized by the Entity class */
         QApplication *app;/*!< Main application object from Qt */
+        int points;/*!< Point counter */
     public:
         /*!
          * \brief Core_kernel constructor

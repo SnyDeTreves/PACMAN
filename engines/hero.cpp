@@ -2,6 +2,7 @@
 
 using namespace engine;
 
+
 Hero::Hero(int x, int y, QString img_path):Entity(x,y,img_path)
 {
     setFlags(QGraphicsItem::ItemIsFocusable);
@@ -35,4 +36,15 @@ void Hero::keyPressEvent(QKeyEvent *event)
     default:
         break;
     }
+}
+
+void Hero::looseLife()
+{
+    if(life>=0)
+        life--;
+}
+
+int Hero::getLife() const
+{
+    return life;
 }
