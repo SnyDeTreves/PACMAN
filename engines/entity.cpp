@@ -1,5 +1,4 @@
 #include "entity.h"
-#include "core_kernel.h"
 
 using namespace engine;
 
@@ -20,10 +19,3 @@ bool Entity::is_null()
 {
     return (this->get_box().get_height() == 0 && this->get_box().get_height() == 0);
 }
-
-void Entity::update_entity()
-{}
-
-
-
-

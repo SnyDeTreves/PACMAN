@@ -35,7 +35,7 @@ namespace engine
          * \param e2 Second game object
          * \return true if and only if there both have a collider and are in contact
          */
-        static bool is_collision(Entity e1, Entity e2);
+        static bool is_collision(Entity &e1, Entity &e2);
 
     };
 }

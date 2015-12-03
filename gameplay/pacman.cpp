@@ -2,8 +2,6 @@
 
 using namespace gameplay;
 
-#include <QDebug>
-
 Pacman::Pacman(int x, int y, QString img_path, int width, int height) : Hero(x, y, width, height, img_path)
 {
     connect(this, SIGNAL(pending_pos(QPointF)), this, SLOT(set_pos(QPointF)));

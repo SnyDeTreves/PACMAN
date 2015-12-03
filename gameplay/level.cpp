@@ -13,9 +13,3 @@ Level::Level(int argc, char *argv[])
 
     this->kernel->add_entity(this->pacman);
 }
-
-int Level::exec()
-{
-    return 0;
-    //return kernel->exec();
-}

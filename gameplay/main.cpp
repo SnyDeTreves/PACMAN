@@ -23,17 +23,16 @@ int main(int argc, char *argv[])
 
     graph.add_entity(p);
 
-    p.setFlags(QGraphicsItem::ItemIsFocusable);
-    p.setFocus();
+
 
     QPoint pos_d1(310,310);
     Box box_d1(15,15);
     PacDot d1(pos_d1,box_d1,":/ressources/pacman.png");
-    graph.add_dot(d1);
+    graph.add_entity(d1);
 
     Core_kernel ker;
     ker.add_entity(&p);
-    ker.add_dot(&d1);
+    ker.add_entity(&d1);
 
 
 

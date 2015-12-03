@@ -11,7 +11,6 @@
 #include <QApplication>
 #include <QObject>
 #include "entity.h"
-#include "dot.h"
 
 /*!
  * \namespace engine
@@ -25,11 +24,10 @@ namespace engine
      * \brief Main application that synchronizes subparts of the engine
      *
      * The Core_kernel stores a pointer to each game object and loops
-     * indefinitely, at each turn the behavior of each game object
-     * is calculated and displayed
+     * indefinitely in a separate thread, at each turn the behavior
+     * of each game object is calculated and displayed
      *
-     * Extends QApplication, the main class for graphic applications
-     * of Qt
+     * Extends QObject to be able to use signals and slots
      */
     class Core_kernel : public QObject
     {
@@ -37,7 +35,6 @@ namespace engine
 
     private:
         std::vector<Entity*> entities_list; /*!< Vector of all the game objects created, modelized by the Entity class */
-        std::vector<Dot*> dots_list;
 
     public:
         /*!
@@ -53,8 +50,17 @@ namespace engine
          */
         void add_entity(Entity *e);
 
-        void add_dot(Dot *d);
     public slots:
+        /*!
+         * \brief Main loop of the engine
+         *
+         * Infinite loop that runs in a separate thread to avoid latency
+         * Through several modules, performs the following :
+         * 1) Updates the position of each game object on screen
+         * 2) Calculates if game objects collide with each other or the walls
+         * 3) Keep texts and numbers displayed up to date
+         *
+         */
         void main_loop();
     };
 }

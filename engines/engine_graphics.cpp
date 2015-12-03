@@ -37,10 +37,3 @@ void Engine_graphics::add_entity(Entity &e)
     e.setPixmap(QPixmap(e.get_img_path()));
     scene->addItem(&e);
 }
-
-void Engine_graphics::add_dot(Dot &d)
-{
-    d.setPixmap(QPixmap(d.get_img_path()));
-    scene->addItem(&d);
-}
-

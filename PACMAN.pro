@@ -19,14 +19,14 @@ SOURCES += \
     engines/heading_south.cpp \
     engines/heading_north.cpp \
     engines/heading_east.cpp \
+    engines/ai.cpp\
+    engines/enemy.cpp\
     gameplay/pacman.cpp \
     gameplay/main.cpp \
     gameplay/level.cpp \
-    gameplay/labyrinth.cpp \
     engines/unmoving.cpp \
     engines/thread_controller.cpp \
-    gameplay/pacdot.cpp \
-    engines/dot.cpp
+    gameplay/pacdot.cpp
 
 
 
@@ -52,11 +52,11 @@ HEADERS += \
     engines/heading_west.h \
     engines/heading_north.h \
     engines/heading_south.h \
+    engines/ai.h\
+    engines/enemy.h\
     gameplay/level.h \
     gameplay/pacman.h \
-    gameplay/labyrinth.h \
     engines/unmoving.h \
     engines/iheading.h \
     engines/thread_controller.h \
-    gameplay/pacdot.h \
-    engines/dot.h
+    gameplay/pacdot.h

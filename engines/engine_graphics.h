@@ -19,7 +19,6 @@
 #include "text_item.h"
 #include "text_number_item.h"
 #include "entity.h"
-#include "dot.h"
 
 /*!
  * \namespace engine
@@ -68,14 +67,12 @@ namespace engine
         /*!
          * \brief Displays a character on screen
          *
-         * An instance of QGraphicsPixmapItem is created and added to
-         * the scene
+         * Entity inherits QGraphicsPixmapItem and so can be added to the scene
+         * and also collide with others QGraphicsItems
          *
-         * \param img_path The path to the image to use for the character
-         * \param pos The initial position of the character, as a QPoint, in pixels
+         * \param e A reference to the entity to display
          */
         void add_entity(Entity &e);
-        void add_dot(Dot &d);
     };
 }
 

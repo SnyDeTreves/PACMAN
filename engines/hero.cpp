@@ -1,20 +1,23 @@
 #include "hero.h"
-#include <QDebug>
+
 using namespace engine;
 
 Hero::Hero(int x, int y, int width, int height, QString img_path):Entity(x,y,width,height,img_path)
 {
+    setFlags(QGraphicsItem::ItemIsFocusable);
+    setFocus();
     heading = new Unmoving();
 }
 
 Hero::Hero(QPoint pos, Box box, QString img_path):Entity(pos, box,img_path)
 {
+    setFlags(QGraphicsItem::ItemIsFocusable);
+    setFocus();
     heading = new Unmoving();
 }
 
 void Hero::keyPressEvent(QKeyEvent *event)
 {
-qDebug() << event->text();;
     switch(event->key())
     {
     case Qt::Key_Left:
@@ -29,9 +32,6 @@ qDebug() << event->text();;
     case Qt::Key_Up:
         heading = new Heading_north();
         break;
-    case Qt::Key_Escape:
-        break;
-
     default:
         break;
     }

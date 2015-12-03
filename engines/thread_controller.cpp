@@ -2,8 +2,6 @@
 
 using namespace engine;
 
-#include <QDebug>
-
 Thread_controller::Thread_controller(Core_kernel &ker) :  QObject()
 {
     ker.moveToThread(&thread);

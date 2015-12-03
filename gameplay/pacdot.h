@@ -1,25 +1,51 @@
 #ifndef PACDOT_H
 #define PACDOT_H
 
+/*!
+ * \file pacdot.h
+ * \brief Dots that Pacman picks and that give points
+ * \author Loïc Vierin
+ */
+
 #include <string>
 #include <QString>
 #include <QKeyEvent>
-#include "engines/dot.h"
+#include "engines/entity.h"
 #include "engines/core_kernel.h"
 
+/*!
+ * \namespace gameplay
+ *
+ * Namespace containing an implementation of our game engine functions in order to have a working game
+ */
 namespace gameplay
 {
-    class PacDot : public engine::Dot
+    /*!
+     * \class PacDot
+     * \brief The dots that have to be picked in order to end the level
+     */
+    class PacDot : public engine::Entity
     {
-
     public:
+        /*!
+         * \brief Constructor
+         * \param x abciss of the center of the hitbox of the dot
+         * \param y ordonate of the center of the hitbox of the dot
+         * \param img_path Path to the sprite of the dot in the project ressources
+         * \param width width of the hitbox
+         * \param height height of the hitbox
+         */
         PacDot(int x, int y, QString img_path, int width=15, int height=15);
+
+        /*!
+         * \brief Constructor
+         * \param pos The position of the center of the hitbox of the point
+         * \param box Hitbox of the point
+         * \param img_path Path to the sprite of the dot in the project ressources
+         */
         PacDot(QPoint pos, engine::Box box, QString img_path);
 
-
-    signals:
-
-    public slots:
+        void update_entity(){};
     };
 }
 
