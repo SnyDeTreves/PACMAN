@@ -48,6 +48,12 @@ namespace gameplay
          * \brief Behavior of the pacman : what it does at each frame
          */
         void update_entity();
+
+        /*!
+         * \brief Returns the name of the Entity subclass being used
+         * \return the name of the Entity subclass being used
+         */
+        QString get_instance(){return "Pacman";}
     public slots:
         /*!
          * \brief Connected to the signal pending_pos emited when the Pacman's position is to be changed
