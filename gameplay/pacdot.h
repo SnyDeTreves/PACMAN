@@ -45,7 +45,7 @@ namespace gameplay
          */
         PacDot(QPoint pos, QString img_path);
 
-        void update_entity(){};
+        void update_entity(){}
 
         /*!
          * \brief Returns the name of the Entity subclass being used
