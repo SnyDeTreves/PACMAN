@@ -3,5 +3,6 @@
         <file>ressources/pacman_layout.JPG</file>
         <file>ressources/pacman.png</file>
         <file>ressources/sprites/pacman_labyrinth.png</file>
+        <file>ressources/dot.png</file>
     </qresource>
 </RCC>
