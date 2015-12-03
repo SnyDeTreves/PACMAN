@@ -20,18 +20,17 @@ void Core_kernel::main_loop()
         for(Entity* e : entities_list)
         {
             e->update_entity();
-            if( QString::compare(((QString) e->getInstance()), "Pacman", Qt::CaseInsensitive) ==0) {
+         /*   if( QString::compare(((QString) e->getInstance()), "Pacman", Qt::CaseInsensitive) ==0) {
                //is it Pacman ?
                 for(Entity* d : entities_list)
                 {
                     //Search for all the pacdots
-                    if( QString::compare(((QString) e->getInstance()), "Pacdot", Qt::CaseInsensitive) ==0) {
-                        //Is it a Pacdot ?
-                        //collision ?
+                    if( QString::compare(((QString) d->getInstance()), "Pacdot", Qt::CaseInsensitive) ==0) {
+                        //collision
                     }
                 }
 
-            }
+            }*/
         }
     }
 }
