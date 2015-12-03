@@ -37,6 +37,8 @@ namespace gameplay
          */
         PacDot(int x, int y, QString img_path);
 
+        ~PacDot();
+
         /*!
          * \brief Constructor
          * \param pos The position of the center of the hitbox of the point
