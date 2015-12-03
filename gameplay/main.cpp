@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 
 
     QPoint pos_d1(310,310);
-    PacDot d1(pos_d1,":/ressources/pacman.png");
+    PacDot d1(pos_d1,":/ressources/dot.png");
     graph.add_entity(d1);
 
 
