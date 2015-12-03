@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 {
     Core_kernel ker(argc,argv);
 
-    Engine_graphics graph(":/ressources/pacman_layout.JPG");
+    Engine_graphics graph(":/ressources/sprites/pacman_labyrinth.png");
 
     QPoint pos(200,200);
 

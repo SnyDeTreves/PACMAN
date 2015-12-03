@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>ressources/pacman_layout.JPG</file>
         <file>ressources/pacman.png</file>
+        <file>ressources/sprites/pacman_labyrinth.png</file>
     </qresource>
 </RCC>
