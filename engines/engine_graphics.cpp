@@ -8,10 +8,9 @@ Engine_graphics::Engine_graphics(QString background_path) : QGraphicsView()
 
     scene = new QGraphicsScene(0,0,pim.width(),pim.height());
 
-   // scene->setBackgroundBrush(pim.scaled(pim.width(),pim.height(),Qt::IgnoreAspectRatio,Qt::SmoothTransformation));
+    scene->setBackgroundBrush(pim.scaled(pim.width(),pim.height(),Qt::IgnoreAspectRatio,Qt::SmoothTransformation));
 
-    QGraphicsPixmapItem test(pim);
-    scene->addItem(&test);
+
 
     setGeometry(0,50,pim.width(),pim.height());
     setScene(scene);
