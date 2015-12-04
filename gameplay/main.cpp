@@ -10,12 +10,23 @@
 using namespace engine;
 using namespace gameplay;
 
-# define GAP 13
+# define GAP 23
 
-void ajout_h(std::vector<PacDot*> &pacDot_list, int nb, int x, int y) {
+void ajout_h(std::vector<PacDot*> &pacDot_list, int x, int y, int nb) {
     QPoint pos_dot(x,y);
     for(int i=0; i<nb; i++) {
         x += GAP;
+        pos_dot.setX(x);
+        pos_dot.setY(y);
+        PacDot* dot = new PacDot(pos_dot,":/ressources/dot.png");
+        pacDot_list.push_back(dot);
+    }
+}
+
+void ajout_v(std::vector<PacDot*> &pacDot_list, int x, int y, int nb) {
+    QPoint pos_dot(x,y);
+    for(int i=0; i<nb; i++) {
+        y += GAP;
         pos_dot.setX(x);
         pos_dot.setY(y);
         PacDot* dot = new PacDot(pos_dot,":/ressources/dot.png");
@@ -41,7 +52,24 @@ int main(int argc, char *argv[])
     QPoint pos_dot(x,y);
     std::vector<PacDot*> pacDot_list = std::vector<PacDot*>();
 
-    ajout_h(pacDot_list,12,58,57);
+    //L1
+    ajout_h(pacDot_list,2,22,21);
+    //L2
+    ajout_h(pacDot_list,2,72,21);
+    //L3
+    ajout_h(pacDot_list,2,127,21);
+    //L4
+    ajout_h(pacDot_list,52,178,16);
+    //L5
+    ajout_h(pacDot_list,97,225,12);
+    //L6
+    ajout_h(pacDot_list,140,275,8);
+
+    //V1
+    //ajout_v(pacDot_list,24,22,21);
+
+
+    //symétrie horizontale
 
 /*
     for(int i=0; i<12; i++) {
