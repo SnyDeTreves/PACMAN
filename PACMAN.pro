@@ -22,7 +22,6 @@ SOURCES += \
     engines/enemy.cpp\
     gameplay/pacman.cpp \
     gameplay/main.cpp \
-    gameplay/level.cpp \
     engines/unmoving.cpp \
     engines/thread_controller.cpp \
     gameplay/pacdot.cpp
@@ -52,7 +51,6 @@ HEADERS += \
     engines/heading_south.h \
     engines/ai.h\
     engines/enemy.h\
-    gameplay/level.h \
     gameplay/pacman.h \
     engines/unmoving.h \
     engines/iheading.h \
