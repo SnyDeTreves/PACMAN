@@ -1,11 +1,12 @@
 #include "engines/thread_controller.h"
 #include "engines/engine_graphics.h"
+#include "engines/engine_physics.h"
 #include "engines/core_kernel.h"
 #include "level.h"
 #include "pacman.h"
 #include "pacdot.h"
-#include <QApplication>
 #include <QPointF>
+#include <QDebug>
 
 using namespace engine;
 using namespace gameplay;
@@ -41,10 +42,13 @@ int main(int argc, char *argv[])
     Engine_graphics graph(":/ressources/sprites/pacman_labyrinth.png");
 
     QPoint pos(200,200);
+    QPoint over(205,205);
 
     Pacman p(pos,":/ressources/pacman.png");
+    Pacman q(over,":/ressources/pacman.png");
 
     graph.add_entity(p);
+    graph.add_entity(q);
 
 //PLACEMENT DES POINTS
     int x=58;
@@ -94,8 +98,7 @@ int main(int argc, char *argv[])
 
 
     ker.add_entity(p);
-
-
+    ker.add_entity(q);
 
 
 

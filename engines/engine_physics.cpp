@@ -5,7 +5,9 @@ using namespace engine;
 bool Engine_physics::is_collision(Entity &e1, Entity &e2)
 {
     if(e1.is_collidable() && e2.is_collidable())
-        return e1.collidesWithPath(e2.clipPath());
+    {
+        return e1.collidesWithItem(&e2);
+    }
     else
         return false;
 }
