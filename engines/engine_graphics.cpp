@@ -7,14 +7,14 @@ Engine_graphics::Engine_graphics(QString background_path) : QGraphicsView()
     QPixmap pim(background_path);
     QGraphicsPixmapItem *background = new QGraphicsPixmapItem(pim);
 
-    scene = new QGraphicsScene(0,0,pim.width(),pim.height());
-    setGeometry(0,50,pim.width(),pim.height());
+    scene = new QGraphicsScene();
     scene->setBackgroundBrush(QBrush(Qt::black));
     scene->addItem(background);
 
     setWindowTitle("Pac-Man");
-
+    setGeometry(0,50,pim.width()+10,pim.height()+10);
     setScene(scene);
+
     show();
 }
 
