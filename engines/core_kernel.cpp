@@ -1,32 +1,3 @@
-
-Skip to content
-This repository
-
-    Pull requests
-    Issues
-    Gist
-
-    @laiaga
-
-6
-0
-
-    0
-
-SnyDeTreves/PACMAN
-Code
-Issues 0
-Pull requests 0
-Wiki
-Pulse
-Graphs
-PACMAN/engines/core_kernel.cpp
-2c7efed an hour ago
-@UltimateCookie UltimateCookie PacDots mangeables !
-2 contributors
-@laiaga
-@UltimateCookie
-85 lines (68 sloc) 2.33 KB
 #include "core_kernel.h"
 
 using namespace engine;
@@ -111,8 +82,4 @@ int Core_kernel::exec()
 {
     return app->exec();
 }
-
-    Status API Training Shop Blog About Pricing
-
-    © 2015 GitHub, Inc. Terms Privacy Security Contact Help
 
