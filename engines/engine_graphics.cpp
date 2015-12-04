@@ -5,14 +5,15 @@ using namespace engine;
 Engine_graphics::Engine_graphics(QString background_path) : QGraphicsView()
 {
     QPixmap pim(background_path);
+    QGraphicsPixmapItem *background = new QGraphicsPixmapItem(pim);
 
     scene = new QGraphicsScene(0,0,pim.width(),pim.height());
-
-    scene->setBackgroundBrush(pim.scaled(pim.width(),pim.height(),Qt::IgnoreAspectRatio,Qt::SmoothTransformation));
-
-
-
     setGeometry(0,50,pim.width(),pim.height());
+    scene->setBackgroundBrush(QBrush(Qt::black));
+    scene->addItem(background);
+
+    setWindowTitle("Pac-Man");
+
     setScene(scene);
     show();
 }

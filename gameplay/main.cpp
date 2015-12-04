@@ -126,6 +126,7 @@ int main(int argc, char *argv[])
         ker.add_entity(*dot);
     }
 
+
     Thread_controller *t = new Thread_controller(ker);
 
     return ker.exec();
