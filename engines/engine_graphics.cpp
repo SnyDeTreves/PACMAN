@@ -2,6 +2,12 @@
 
 using namespace engine;
 
+void Engine_graphics::setScore(TextNumberItem *value)
+{
+    score = value;
+    scene->addItem(score);
+}
+
 Engine_graphics::Engine_graphics(QString background_path) : QGraphicsView()
 {
     QPixmap pim(background_path);

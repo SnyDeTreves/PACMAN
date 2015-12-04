@@ -57,7 +57,12 @@ int main(int argc, char *argv[])
 
     Engine_graphics graph(":/ressources/sprites/pacman_labyrinth.png");
 
-    graph.add_text("SCORE: ",QPoint(20,10),true,0);
+    TextNumberItem* score = new TextNumberItem("SCORE:",0);
+
+    //graph.add_text("SCORE: ",QPoint(20,10),true,0);
+    graph.setScore(score);
+    ker.setScore(&score);
+
 
     QPoint pos(200,200);
 
