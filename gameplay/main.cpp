@@ -136,7 +136,6 @@ int main(int argc, char *argv[])
     ker.setScore(score);
 
     //Engine_graphics
-    graph.add_text("SCORE: ",QPoint(20,10),true,0);
     graph.add_entity(p);
     graph.add_entity(blue);
     graph.add_entity(red);
