@@ -54,7 +54,10 @@ int main(int argc, char *argv[])
 {
     Core_kernel ker(argc,argv);
 
+
     Engine_graphics graph(":/ressources/sprites/pacman_labyrinth.png");
+
+    graph.add_text("SCORE: ",QPoint(20,10),true,0);
 
     QPoint pos(200,200);
 
