@@ -36,6 +36,7 @@ namespace engine
     private:
         QString img_path; /*!< path to the image in the ressources of the project */
         bool collidable; /*!< Set to true when the Entity can collide with other Entities */
+        QPointF init_place; /*!< Initial entity place */
     public:
         /*!
          * \brief Constructor for Entity
@@ -74,9 +75,16 @@ namespace engine
          */
         virtual QString get_instance()=0;
 
+        /*!
+         * Reset the entity at it's initial place
+         * \brief setAtInitPlace
+         */
+        void resetAtInitPlace();
+
         QString get_img_path(){return img_path;}
         bool is_collidable(){return collidable;}
-        void set_collidable(bool c){collidable=c;}
+        void setCollidable(bool value);
+        QPointF getInit_place() const;
     };
 }
 

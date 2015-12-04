@@ -16,6 +16,7 @@ void Core_kernel::add_entity(Entity &e)
 void Core_kernel::main_loop()
 {
     bool end =false;
+    qDebug()<<pacdots_nb;
     while(!end)
     {
         for(Entity* e : entities_list)
@@ -35,23 +36,26 @@ void Core_kernel::main_loop()
                            qDebug()<<"Collision: Pacdot";
                            points+=10;
                            pacdots_nb--;
-                           //Effacer le point
-                           //delete d;
+                           d->setCollidable(false);
+                           d->hide();
                     }
 
                    //Enemy
                     if( QString::compare(((QString) d->get_instance()), "Enemy", Qt::CaseInsensitive) ==0) {
 
-                        /*if(Engine_physics::is_collision(*e,*d)) {
+                        if(Engine_physics::is_collision(*e,*d)) {
                            qDebug()<<"Collision: Ghost";
 
-                           if( ((Enemy) d)->isVulnerable() )
+
+                           if( ((Enemy*) d)->isVulnerable() ) {
                                points+=200;
+                               ((Enemy*) d)->resetAtInitPlace();
+                           }
                            else {
-                               if(e->getLife>=0) {
-                                   e->looseLife();
+                               if(((Hero*) e)->getLife() >= 0 ) {
+                                   ((Hero*) e)->looseLife();
                                    qDebug()<<"-1 LIFE";
-                                   //e->setInitPlace();
+                                   ((Hero*) e)->resetAtInitPlace();
 
                                }
                                else {
@@ -60,7 +64,7 @@ void Core_kernel::main_loop()
                                    end=true;
                                }
                            }
-                         }*/
+                         }
                        }
                     }
                 }
