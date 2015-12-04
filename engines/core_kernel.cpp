@@ -1,3 +1,32 @@
+
+Skip to content
+This repository
+
+    Pull requests
+    Issues
+    Gist
+
+    @laiaga
+
+6
+0
+
+    0
+
+SnyDeTreves/PACMAN
+Code
+Issues 0
+Pull requests 0
+Wiki
+Pulse
+Graphs
+PACMAN/engines/core_kernel.cpp
+2c7efed an hour ago
+@UltimateCookie UltimateCookie PacDots mangeables !
+2 contributors
+@laiaga
+@UltimateCookie
+85 lines (68 sloc) 2.33 KB
 #include "core_kernel.h"
 
 using namespace engine;
@@ -24,13 +53,13 @@ void Core_kernel::main_loop()
             e->update_entity();
 
 
-            if( QString::compare((e->get_instance()), "Pacman")) {
+            if( QString::compare(((QString) e->get_instance()), "Pacman", Qt::CaseInsensitive) ==0) {
                //is it Pacman ?
 
                 for(Entity* d : entities_list)
                 {
                     //PACDOTS:
-                    if( QString::compare(( d->get_instance()), "Pacdot") ==0) {
+                    if( QString::compare(((QString) d->get_instance()), "Pacdot", Qt::CaseInsensitive) ==0) {
 
                         if(Engine_physics::is_collision(*e,*d)) {
                            qDebug()<<"Collision: Pacdot";
@@ -41,7 +70,7 @@ void Core_kernel::main_loop()
                     }
 
                    //Enemy
-                    if( QString::compare(( d->get_instance()), "Enemy")) {
+                    if( QString::compare(((QString) d->get_instance()), "Enemy", Qt::CaseInsensitive) ==0) {
 
                         if(Engine_physics::is_collision(*e,*d)) {
                            qDebug()<<"Collision: Ghost";
@@ -82,3 +111,8 @@ int Core_kernel::exec()
 {
     return app->exec();
 }
+
+    Status API Training Shop Blog About Pricing
+
+    © 2015 GitHub, Inc. Terms Privacy Security Contact Help
+

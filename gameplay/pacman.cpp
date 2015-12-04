@@ -1,5 +1,5 @@
 #include "pacman.h"
-
+#include <QDebug>
 using namespace gameplay;
 
 Pacman::Pacman(int x, int y, QString img_path) : Hero(x, y, img_path)
@@ -14,7 +14,6 @@ Pacman::Pacman(QPoint pos, QString img_path) : Hero(pos, img_path)
 
 void Pacman::update_entity()
 {
-
     QPointF target = heading->do_deplacment(pos());
     emit pending_pos(target);
 }
