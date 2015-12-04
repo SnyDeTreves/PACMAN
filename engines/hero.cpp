@@ -23,15 +23,19 @@ void Hero::keyPressEvent(QKeyEvent *event)
     {
     case Qt::Key_Left:
         heading = new Heading_west();
+        this->setImg(":/ressources/sprites/pacman_1_left.png");
         break;
     case Qt::Key_Right:
         heading = new Heading_east();
+        this->setImg(":/ressources/sprites/pacman_1_right.png");
         break;
     case Qt::Key_Down:
         heading = new Heading_south();
+        this->setImg(":/ressources/sprites/pacman_1_down.png");
         break;
     case Qt::Key_Up:
         heading = new Heading_north();
+        this->setImg(":/ressources/sprites/pacman_1_up.png");
         break;
     default:
         break;

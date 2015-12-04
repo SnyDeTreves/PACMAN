@@ -85,6 +85,14 @@ namespace engine
         bool is_collidable(){return collidable;}
         void setCollidable(bool value);
         QPointF getInit_place() const;
+
+        /*!
+         *Change the entity's image
+         * \brief setImg
+         * \param value is the path
+         */
+        void setImg(const QString &value);
+        QString getImg_path() const;
     };
 }
 
