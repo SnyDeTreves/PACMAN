@@ -119,12 +119,17 @@ int main(int argc, char *argv[])
     Core_kernel ker(argc,argv);
     Engine_graphics graph(":/ressources/sprites/pacman_labyrinth.png");
     std::vector<PacDot*> pacDot_list = std::vector<PacDot*>();
-    QPoint pac_default(200,200);
+    QPoint pac_default(245,500);
+    QPoint center(245,344);
     Pacman p(pac_default,":/ressources/pacman.png");
-    Enemy e(0,0,":/ressources/sprites/ghost_blue_east_0.png");
+    Enemy blue(center+QPoint(-30,0),":/ressources/sprites/ghost_blue_east_0.png");
+    Enemy red(center+QPoint(-10,0),":/ressources/sprites/ghost_red_east_0.png");
+    Enemy pink(center+QPoint(10,0),":/ressources/sprites/ghost_pink_east_0.png");
+    Enemy yellow(center+QPoint(30,0),":/ressources/sprites/ghost_yellow_east_0.png");
     Thread_controller *t = new Thread_controller(ker);
     TextNumberItem* score = new TextNumberItem("SCORE:",0);
 
+    //512*687
     //Score
     //graph.add_text("SCORE: ",QPoint(20,10),true,0);
     graph.setScore(score);
@@ -133,11 +138,17 @@ int main(int argc, char *argv[])
     //Engine_graphics
     graph.add_text("SCORE: ",QPoint(20,10),true,0);
     graph.add_entity(p);
-    graph.add_entity(e);
+    graph.add_entity(blue);
+    graph.add_entity(red);
+    graph.add_entity(pink);
+    graph.add_entity(yellow);
 
     //Core_kernel
     ker.add_entity(p);
-    ker.add_entity(e);
+    ker.add_entity(blue);
+    ker.add_entity(red);
+    ker.add_entity(pink);
+    ker.add_entity(yellow);
 
     //Pacdots
     centralize_ajout_h(pacDot_list);

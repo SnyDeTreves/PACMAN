@@ -23,7 +23,7 @@ namespace engine
     class Enemy : public Entity
     {
     private:
-        bool vulnerability;
+        Q_OBJECT        bool vulnerability;
         AI *ai;/*< Instance of the AI class for the ennemy to select a behavior */
     public:
         /*!
@@ -46,6 +46,19 @@ namespace engine
         void update_entity();
 
         QString get_instance(){return "Enemy";}
+
+    public slots:
+        /*!
+         * \brief Connected to the signal pending_pos emited when the enemy's position is to be changed
+         * \param pos The new position to adopt
+         */
+        void set_pos(QPointF pos){setPos(pos);}
+    signals:
+        /*!
+         * \brief Signal emited from the Core_kernel's Main_loop if the enemy's  position has been modified
+         * \param pos
+         */
+        void pending_pos(QPointF pos);
     };
 }
 
