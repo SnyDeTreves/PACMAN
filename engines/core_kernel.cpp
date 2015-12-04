@@ -24,13 +24,13 @@ void Core_kernel::main_loop()
             e->update_entity();
 
 
-            if( QString::compare(((QString) e->get_instance()), "Pacman", Qt::CaseInsensitive) ==0) {
+            if( QString::compare((e->get_instance()), "Pacman")) {
                //is it Pacman ?
 
                 for(Entity* d : entities_list)
                 {
                     //PACDOTS:
-                    if( QString::compare(((QString) d->get_instance()), "Pacdot", Qt::CaseInsensitive) ==0) {
+                    if( QString::compare(( d->get_instance()), "Pacdot") ==0) {
 
                         if(Engine_physics::is_collision(*e,*d)) {
                            qDebug()<<"Collision: Pacdot";
@@ -41,7 +41,7 @@ void Core_kernel::main_loop()
                     }
 
                    //Enemy
-                    if( QString::compare(((QString) d->get_instance()), "Enemy", Qt::CaseInsensitive) ==0) {
+                    if( QString::compare(( d->get_instance()), "Enemy")) {
 
                         if(Engine_physics::is_collision(*e,*d)) {
                            qDebug()<<"Collision: Ghost";
