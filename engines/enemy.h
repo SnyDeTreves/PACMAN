@@ -44,6 +44,8 @@ namespace engine
         bool isVulnerable();
 
         void update_entity();
+
+        QString get_instance(){return "Enemy";}
     };
 }
 

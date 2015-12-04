@@ -1,5 +1,5 @@
 #include "pacman.h"
-#include <QDebug>
+
 using namespace gameplay;
 
 Pacman::Pacman(int x, int y, QString img_path) : Hero(x, y, img_path)

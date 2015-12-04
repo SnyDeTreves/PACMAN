@@ -21,6 +21,5 @@ bool Enemy::isVulnerable()
 
 void Enemy::update_entity()
 {
-    //QPointF target = heading->do_deplacment(pos());
-    //emit pending_pos(target);
+    QPointF target = ai->random(pos());
 }

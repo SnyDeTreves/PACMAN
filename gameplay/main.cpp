@@ -2,11 +2,11 @@
 #include "engines/engine_graphics.h"
 #include "engines/engine_physics.h"
 #include "engines/core_kernel.h"
+#include "engines/enemy.h"
 #include "level.h"
 #include "pacman.h"
 #include "pacdot.h"
 #include <QPointF>
-#include <QDebug>
 
 using namespace engine;
 using namespace gameplay;
@@ -50,28 +50,31 @@ void ajout_v(std::vector<PacDot*> &pacDot_list, int x, int y, int nb) {
     }
 }
 
-int main(int argc, char *argv[])
+void centralize_ajout_v(std::vector<PacDot*> &pacDot_list)
 {
-    Core_kernel ker(argc,argv);
+    //V1
+    ajout_v(pacDot_list,24,130,17);
+    //V2
+    ajout_v(pacDot_list,74,175,13);
+    //V3
+    ajout_v(pacDot_list,120,222,9);
+    //V4
+    ajout_v(pacDot_list,175,275,5);
 
+    //symétrie sur les verticaux
+    int s=500;
+    //V1
+    ajout_v(pacDot_list,s-24,130,17);
+    //V2
+    ajout_v(pacDot_list,s-74,175,13);
+    //V3
+    ajout_v(pacDot_list,s-120,222,9);
+    //V4
+    ajout_v(pacDot_list,s-175,275,5);
+}
 
-    Engine_graphics graph(":/ressources/sprites/pacman_labyrinth.png");
-
-    graph.add_text("SCORE: ",QPoint(20,10),true,0);
-
-    QPoint pos(200,200);
-
-    Pacman p(pos,":/ressources/pacman.png");
-
-    graph.add_entity(p);
-    ker.add_entity(p);
-
-//PLACEMENT DES POINTS
-    int x=58;
-    int y=57;
-    QPoint pos_dot(x,y);
-    std::vector<PacDot*> pacDot_list = std::vector<PacDot*>();
-
+void centralize_ajout_h(std::vector<PacDot*> &pacDot_list)
+{
     //L1
     ajout_h(pacDot_list,2,22,21);
     //L2
@@ -100,28 +103,32 @@ int main(int argc, char *argv[])
     ajout_h(pacDot_list,97,s-225,12);
     //L6
     ajout_h(pacDot_list,150,s-270,7);
+}
+
+int main(int argc, char *argv[])
+{
+    Core_kernel ker(argc,argv);
 
 
-    //V1
-    ajout_v(pacDot_list,24,130,17);
-    //V2
-    ajout_v(pacDot_list,74,175,13);
-    //V3
-    ajout_v(pacDot_list,120,222,9);
-    //V4
-    ajout_v(pacDot_list,175,275,5);
+    Engine_graphics graph(":/ressources/sprites/pacman_labyrinth.png");
 
-    //symétrie sur les verticaux
-    s=500;
-    //V1
-    ajout_v(pacDot_list,s-24,130,17);
-    //V2
-    ajout_v(pacDot_list,s-74,175,13);
-    //V3
-    ajout_v(pacDot_list,s-120,222,9);
-    //V4
-    ajout_v(pacDot_list,s-175,275,5);
+    graph.add_text("SCORE: ",QPoint(20,10),true,0);
 
+    QPoint pos(200,200);
+
+    Pacman p(pos,":/ressources/pacman.png");
+
+    graph.add_entity(p);
+    ker.add_entity(p);
+
+//PLACEMENT DES POINTS
+    int x=58;
+    int y=57;
+    QPoint pos_dot(x,y);
+    std::vector<PacDot*> pacDot_list = std::vector<PacDot*>();
+
+    centralize_ajout_h(pacDot_list);
+    centralize_ajout_v(pacDot_list);
 
     for(PacDot* dot : pacDot_list)
     {
@@ -129,8 +136,10 @@ int main(int argc, char *argv[])
         ker.add_entity(*dot);
     }
 
+    Enemy e(0,0,":/ressources/sprites/ghost_blue_east_0.png");ker.add_entity(e);
 
     Thread_controller *t = new Thread_controller(ker);
+    t->start();
 
     return ker.exec();
 }

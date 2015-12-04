@@ -39,6 +39,8 @@ namespace engine
         Thread_controller(Core_kernel &ker);
 
         ~Thread_controller();
+
+        void start();
     signals:
         void quit_thread();
     };

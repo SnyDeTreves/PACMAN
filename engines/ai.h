@@ -8,6 +8,9 @@
  */
 
 #include <QPointF>
+#include <stdlib.h>
+#include <time.h>
+#include "iheading.h"
 
 /*!
  * \namespace engine
@@ -27,6 +30,8 @@ namespace engine
     class AI
     {
         public:
+            AI();
+
             /*!
              * \brief This algorithm follow the main character and tries to outrun him
              * \param from The current position of the enemy applying this behavior
@@ -41,6 +46,12 @@ namespace engine
              */
             QPointF block(QPointF from);
 
+            /*!
+             * \brief This algorithm decides of a random position for the enemy
+             * \param from The current position of the enemy applying this behavior
+             * \return The target position the enemy reaches during the frame
+             */
+            QPointF random(QPointF from);
     };
 }
 
