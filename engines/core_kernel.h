@@ -39,6 +39,7 @@ namespace engine
         std::vector<Entity*> entities_list; /*!< Vector of all the game objects created, modelized by the Entity class */
         QApplication *app;/*!< Main application object from Qt */
         int points;/*!< Point counter */
+        int pacdots_nb=244;/*!< count of pacdots left */
     public:
         /*!
          * \brief Core_kernel constructor

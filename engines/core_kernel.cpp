@@ -34,12 +34,15 @@ void Core_kernel::main_loop()
                         if(Engine_physics::is_collision(*e,*d)) {
                            qDebug()<<"Collision: Pacdot";
                            points+=10;
+                           pacdots_nb--;
+                           //Effacer le point
+                           //delete d;
                     }
 
                    //Enemy
-                   /* if( QString::compare(((QString) d->get_instance()), "Enemy", Qt::CaseInsensitive) ==0) {
+                    if( QString::compare(((QString) d->get_instance()), "Enemy", Qt::CaseInsensitive) ==0) {
 
-                        if(Engine_physics::is_collision(*e,*d)) {
+                        /*if(Engine_physics::is_collision(*e,*d)) {
                            qDebug()<<"Collision: Ghost";
 
                            if( ((Enemy) d)->isVulnerable() )
@@ -48,6 +51,7 @@ void Core_kernel::main_loop()
                                if(e->getLife>=0) {
                                    e->looseLife();
                                    qDebug()<<"-1 LIFE";
+                                   //e->setInitPlace();
 
                                }
                                else {
@@ -56,12 +60,16 @@ void Core_kernel::main_loop()
                                    end=true;
                                }
                            }
-                         }
-                       }*/
+                         }*/
+                       }
                     }
                 }
 
             }
+        }
+        if(pacdots_nb==0) {
+            qDebug()<<"WIN!";
+            end=true;
         }
     }
 }
