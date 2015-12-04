@@ -15,6 +15,7 @@
 #include "engine_physics.h"
 #include "enemy.h"
 #include "hero.h"
+#include "text_number_item.h"
 
 /*!
  * \namespace engine
@@ -41,6 +42,8 @@ namespace engine
         QApplication *app;/*!< Main application object from Qt */
         int points;/*!< Point counter */
         int pacdots_nb=282;/*!< count of pacdots left */
+        TextNumberItem *score;
+
     public:
         /*!
          * \brief Core_kernel constructor
@@ -54,6 +57,8 @@ namespace engine
          * \param e the entity to append
          */
         void add_entity(Entity &e);
+
+        void setScore(TextNumberItem *value);
 
     public slots:
         /*!

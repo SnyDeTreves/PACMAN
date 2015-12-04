@@ -53,7 +53,6 @@ void ajout_v(std::vector<PacDot*> &pacDot_list, int x, int y, int nb)
 }
 
 void centralize_ajout_v(std::vector<PacDot*> &pacDot_list)
-
 {
     //V1
     ajout_v(pacDot_list,24,130,17);
@@ -66,6 +65,7 @@ void centralize_ajout_v(std::vector<PacDot*> &pacDot_list)
 
     //symétrie sur les verticaux
     int s=500;
+
     //V1
     ajout_v(pacDot_list,s-24,130,17);
     //V2
@@ -110,6 +110,10 @@ void centralize_ajout_h(std::vector<PacDot*> &pacDot_list)
 }
 
 
+
+
+
+
 int main(int argc, char *argv[])
 {
     Core_kernel ker(argc,argv);
@@ -119,7 +123,12 @@ int main(int argc, char *argv[])
     Pacman p(pac_default,":/ressources/pacman.png");
     Enemy e(0,0,":/ressources/sprites/ghost_blue_east_0.png");
     Thread_controller *t = new Thread_controller(ker);
+    TextNumberItem* score = new TextNumberItem("SCORE:",0);
 
+    //Score
+    //graph.add_text("SCORE: ",QPoint(20,10),true,0);
+    graph.setScore(score);
+    ker.setScore(score);
 
     //Engine_graphics
     graph.add_text("SCORE: ",QPoint(20,10),true,0);

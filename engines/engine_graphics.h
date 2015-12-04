@@ -40,6 +40,7 @@ namespace engine
     {
     private:
         QGraphicsScene *scene; /*!< The scene to be displayed */
+        TextNumberItem *score;
 
     public:
         /*!
@@ -73,6 +74,7 @@ namespace engine
          * \param e A reference to the entity to display
          */
         void add_entity(Entity &e);
+        void setScore(TextNumberItem *value);
     };
 }
 

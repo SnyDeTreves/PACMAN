@@ -2,6 +2,11 @@
 
 using namespace engine;
 
+void Core_kernel::setScore(TextNumberItem *value)
+{
+    score = value;
+}
+
 Core_kernel::Core_kernel(int &argc, char *argv[]) : QObject()
 {
     this->entities_list = std::vector<Entity*>();
@@ -71,6 +76,7 @@ void Core_kernel::main_loop()
 
             }
         }
+        score->setNumber(points);
         if(pacdots_nb==0) {
             qDebug()<<"WIN!";
             end=true;
