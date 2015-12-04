@@ -20,11 +20,6 @@ void Entity::setImg(const QString &value)
 
 }
 
-QString Entity::getImg_path() const
-{
-    return img_path;
-}
-
 Entity::Entity(int x, int y, QString img_path) : QGraphicsPixmapItem()
 {
     this->img_path = img_path;

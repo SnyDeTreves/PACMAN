@@ -40,6 +40,9 @@ namespace engine
 
         ~Thread_controller();
 
+        /*!
+         * \brief Starts the thread
+         */
         void start();
     signals:
         void quit_thread();

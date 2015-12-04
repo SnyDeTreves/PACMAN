@@ -7,7 +7,7 @@
 #include "pacdot.h"
 #include <QPointF>
 
-#define GAP 23
+#define GAP 23 /*!< Space in pixels between two pacdots */
 
 using namespace engine;
 using namespace gameplay;
@@ -52,6 +52,10 @@ void ajout_v(std::vector<PacDot*> &pacDot_list, int x, int y, int nb)
     }
 }
 
+/*!
+ * \brief Initialization of all the vertical pacdots
+ * \param pacDot_list The list of pacdots for them to be memorized
+ */
 void centralize_ajout_v(std::vector<PacDot*> &pacDot_list)
 {
     //V1
@@ -76,6 +80,10 @@ void centralize_ajout_v(std::vector<PacDot*> &pacDot_list)
     ajout_v(pacDot_list,s-175,275,5);
 }
 
+/*!
+ * \brief Initialization of all the horizontal pacdots
+ * \param pacDot_list The list of pacdots for them to be memorized
+ */
 void centralize_ajout_h(std::vector<PacDot*> &pacDot_list)
 
 {

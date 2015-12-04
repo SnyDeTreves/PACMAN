@@ -23,7 +23,8 @@ namespace engine
     class Enemy : public Entity
     {
     private:
-        Q_OBJECT        bool vulnerability;
+        Q_OBJECT
+        bool vulnerability;
         AI *ai;/*< Instance of the AI class for the ennemy to select a behavior */
     public:
         /*!
@@ -41,10 +42,21 @@ namespace engine
          */
         Enemy(QPoint pos,QString img_path);
 
-        bool isVulnerable();
+        bool isVulnerable(){return vulnerability;}
 
+        /*!
+         * \brief Implements the behavior of the object
+         *
+         * This function is called at every frame, the duration of a frame being unknown
+         * and it embodies everything the object is supposed to do during a frame
+         *
+         */
         void update_entity();
 
+        /*!
+         * \brief Returns a string descripting the class
+         * \return The name of the class as a QString
+         */
         QString get_instance(){return "Enemy";}
 
     public slots:

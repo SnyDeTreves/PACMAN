@@ -15,11 +15,6 @@ Enemy::Enemy(QPoint pos, QString img_path):Entity(pos,img_path)
     ai = new AI();
 }
 
-bool Enemy::isVulnerable()
-{
-    return vulnerability;
-
-}
 
 void Enemy::update_entity()
 {

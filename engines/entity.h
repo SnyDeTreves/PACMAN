@@ -92,7 +92,6 @@ namespace engine
          * \param value is the path
          */
         void setImg(const QString &value);
-        QString getImg_path() const;
     };
 }
 
