@@ -1,6 +1,6 @@
 #ifndef HEADING
 #define HEADING
-#define FPS 1.025
+#define FPS 0.025
 
 /*
  * \file iheading.h
